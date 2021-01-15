@@ -38,29 +38,38 @@
 			<ul>
 			<?php $argPress = array( 
 				'post_type' => 'press',
-				'posts_per_page' => 6 
+				'posts_per_page' => 6
 				 );
 			  query_posts( $argPress ); // hijack the main loop
 			  while ( have_posts() ) : the_post();
 			    ?>
+			   	
 
 			    <li>
 			    	<a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
-			    </li>
-			 
-			   <?php
+			    </i>
+
+			  <?php
 			  endwhile;
 			  ?>
+
+
 			  </ul>
+
+			  
+			 	<button class="morePress">+ More</button>
+			 
+
+
 			  <?php
 			  wp_reset_query();
 			  ?> 
-			  <button class="morePress">+ More</button>
+			  
 		</section>
 	</section>
 	<section class="mainPageMid">
 		<section class="pressMid">
-			<ul>
+			<ul >
 			<?php $argPress = array( 
 				'post_type' => 'press',
 				'posts_per_page' => -1
@@ -68,11 +77,12 @@
 			  query_posts( $argPress ); // hijack the main loop
 			  while ( have_posts() ) : the_post();
 			    ?>
-
+			     <?php echo $argPress->current_post;
+			    ?>
 			    <li>
 			    	<a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
 			    </li>
-			 
+				 
 			   <?php
 			  endwhile;
 			  ?>
@@ -80,6 +90,7 @@
 			  <?php
 			  wp_reset_query();
 			  ?> 
+			  
 		</section>
 		<section class="mission">
 			<?php 
@@ -92,8 +103,6 @@
 			 ?>
 
 		</section>
-
-
 		
 	</section>
 	<section class="mainPagePosts">
