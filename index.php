@@ -1,7 +1,7 @@
 <?php //index.php is the last resort template, if no other templates match ?>
 <?php get_header(); ?>
 
-<main>
+<main class="homePage">
 	<section class="mainPageSide">
 	    <h1>
 	      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
@@ -10,7 +10,7 @@
 	    </h1>
 		<div class="castingInfo">
 			<?php the_field('casting_&_booking_info_text', 'option'); ?>
-			<a href="mailto:<?php the_field('lorde_inc_email', 'option'); ?>"><?php the_field('lorde_inc_email', 'option'); ?></a>
+			<!-- <a href="mailto:<?php the_field('lorde_inc_email', 'option'); ?>"><?php the_field('lorde_inc_email', 'option'); ?></a> -->
 		</div>
 		<div class="submissionsInfo">
 			<?php if( have_rows('submissions','option') ): ?>
@@ -25,50 +25,26 @@
 			    <?php endwhile; ?>
 			<?php endif; ?>
 		</div>
-		<section class="casting">
-			<?php 
-				$post   = get_post( 19 );
-			
-			 ?>
-			 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+	
+		<section class="moreLinks">
+			<section class="casting">
+				<?php 
+					$post   = get_post( 19 );
+				
+				 ?>
+				 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 
 
-		</section>	
-		<section class="press">
-			<ul>
-			<?php $argPress = array( 
-				'post_type' => 'press',
-				'posts_per_page' => 6
-				 );
-			  query_posts( $argPress ); // hijack the main loop
-			  while ( have_posts() ) : the_post();
-			    ?>
-			   	
-
-			    <li>
-			    	<a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
-			    </i>
-
-			  <?php
-			  endwhile;
-			  ?>
-
-
-			  </ul>
-
-			  
-			 	<button class="morePress">+ More</button>
-			 
-
-
-			  <?php
-			  wp_reset_query();
-			  ?> 
-			  
+			</section>
+			<button class="morePress">Press</button>
+			<a href="#" target="_blank">Journal</a>
+			<a href="https://www.instagram.com/lordeinc/" target="_blank">Instagram</a>
 		</section>
+
 	</section>
 	<section class="mainPageMid">
 		<section class="pressMid">
+			<div class="closeMid">← CLOSE</div>
 			<ul >
 			<?php $argPress = array( 
 				'post_type' => 'press',
@@ -97,7 +73,10 @@
 				$post   = get_post( 48 );
 
 				$output =  apply_filters( 'the_content', $post->post_content );
-
+				?>
+			<h2><?php the_title(); ?></h2>
+			<?php 
+				
 				echo $output;
 
 			 ?>
@@ -115,7 +94,9 @@
 		  while ( have_posts() ) : the_post();
 		    ?>
 		    <a href="<?php the_permalink(); ?>">
-		    	<?php the_post_thumbnail('large'); ?>
+		    	<figure>
+		    	<?php the_post_thumbnail('medium'); ?>	
+		    	</figure>
 		    	<div class="modelName"><?php the_title(); ?></div>
 
 		    </a>
