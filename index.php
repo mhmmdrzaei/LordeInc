@@ -3,6 +3,7 @@
 
 <main class="homePage">
 	<section class="mainPageSide">
+		<section class="mainPageSideInner">
 	    <h1>
 	      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
 	        <?php bloginfo( 'name' ); ?>
@@ -40,10 +41,10 @@
 			<a href="#" target="_blank">Journal</a>
 			<a href="https://www.instagram.com/lordeinc/" target="_blank">Instagram</a>
 		</section>
-
+		</section>
 	</section>
 	<section class="mainPageMid">
-		<section class="pressMid">
+		<section class="pressMid" style="background: <?php the_field('background_color', 'option'); ?>">
 			<div class="closeMid">← CLOSE</div>
 			<ul >
 			<?php $argPress = array( 
@@ -94,10 +95,14 @@
 		  while ( have_posts() ) : the_post();
 		    ?>
 		    <a href="<?php the_permalink(); ?>">
-		    	<figure>
-		    	<?php the_post_thumbnail('medium'); ?>	
-		    	</figure>
-		    	<div class="modelName"><?php the_title(); ?></div>
+		    	<div class="containerLink">
+		    		<?php the_post_thumbnail('medium'); ?>	
+		    		<div class="modelNameOverlay"></div>
+		    		<div class="text">
+		    				<?php the_title(); ?>
+		    		</div>	
+		    	</div>
+
 
 		    </a>
 		   <?php
@@ -108,7 +113,7 @@
 		  ?> 
 		</div> 
 		
+		
 	</section>
 </main>
-
 <?php get_footer(); ?>

@@ -11,7 +11,7 @@
 </head>
 
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> style="background: <?php the_field('background_color', 'option'); ?>">
 
 
 

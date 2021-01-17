@@ -30,6 +30,7 @@ Default Styling
 main {
 	max-width: 1800px;
 	margin: 0 auto;
+	min-height: 100vh;
 	
 	
 }
@@ -48,8 +49,8 @@ img {
 
 body {
 	font-family: akkuratMono, sans-serif;
-	background-color: #FAF6EB;
-	padding: 20px;
+	// background-color: #FAF6EB;
+	// padding: 20px;
 	@include fontSize(8);
 }
 .homePage {
@@ -60,7 +61,7 @@ body {
 	width: 20%;
 	z-index: 10;
 	border-right: 1px solid black;
-	padding-right: 10px;
+	// padding-right: 10px;
 	h1 {
 		margin: 0;
 		text-transform: uppercase;
@@ -71,6 +72,7 @@ body {
 		}
 	}
 }
+
 .castingInfo {
 	margin: 52px 0 56px;
 }
@@ -102,6 +104,11 @@ body {
 		}
 	}
 }
+.mainPageSideInner {
+	position: fixed;
+	width: 20%;
+	padding: 15px;
+}
 //mid page 
 .mainPageMid {
 
@@ -113,9 +120,11 @@ body {
 	display: none;
 	position: fixed;
 	width: 21%;
+	top: 25px;
 	padding: 1%;
+	padding-top: 50px;
 	z-index: 30;
-	background: #FAF6EB;
+	// background: #FAF6EB;
 	// background: white;
 	height: 100vh;
 	ul {
@@ -145,7 +154,7 @@ body {
 }
 @keyframes splash {
  from {left: -20%;}
-  to {left: 22%;}
+  to {left: 21%;}
 }
 .closeMiddle {
 	display: block;
@@ -153,10 +162,14 @@ body {
 
 }
 @keyframes splish {
- from {left: 22%;}
+ from {left: 21%;}
   to {left: -22%;}
 }
 .mission {
+	position: fixed;
+	width: 21%;
+	left: 20%;
+	padding: 15px;
 	h2 {
 		margin: 0 0 52px;
 	}
@@ -164,22 +177,82 @@ body {
 //main posts 
 .mainPagePosts {
 	width: 55%;
-	@extend .flex;
-	justify-content: space-between;
+	padding-top: 15px;
+	// @extend .flex;
+	// justify-content: space-between;
+	display: grid;
+	align-self:end;
+	  /* Auto-fit as many items on a row as possible without going under 180px */
+	  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+	  /* A little spacing between articles */
+	  grid-gap: 1em;
 	a {
-		width: 31%;
-		height: 31%;
+		// width: 100%;
+		// height: 100%;
 		img {
 			width: 100%;
 			height: auto;
 		}
-		overflow: hidden;
+		// overflow: hidden;
 		text-align: center;
 	}
 }
+// .modelName {
+// 	position: relative;
+// 	// display: none;
+// 	top: -45%;
+// 	opacity: 0;
+// }
+
+// .mainPagePosts:hover >.modelName {
+// 	opacity: 1;
+// }
+.containerLink {
+  position: relative;
+  width: 92%;
+}
+
+.modelNameOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+}
 
 
+.mainPagePosts a:hover .modelNameOverlay {
+  opacity: .3;
+}
 
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transition: .5s ease;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  // text-align: center;
+}
+
+.mainPagePosts a:hover .text {
+  opacity: 1;
+}
+//footer
+footer{
+	position: absolute;
+	bottom: -39px;
+	right: 18px;
+}
 
 
 
