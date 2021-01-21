@@ -121,12 +121,13 @@ body {
 	position: fixed;
 	width: 21%;
 	top: 25px;
+	overflow-y:scroll;
 	padding: 1%;
 	padding-top: 50px;
 	z-index: 30;
 	// background: #FAF6EB;
 	// background: white;
-	height: 100vh;
+	height: 97vh;
 	ul {
 		margin: 0;
 		padding-left: 10px;
@@ -218,7 +219,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: 98%;
   width: 100%;
   opacity: 0;
   transition: .5s ease;
@@ -253,6 +254,68 @@ footer{
 	bottom: -39px;
 	right: 18px;
 }
+
+//model pages 
+
+.modelPageSide {
+	width: 21%;
+	padding: 15px;
+	border-right: 1px solid black;
+	h1 {
+		margin: 0;
+		text-transform: uppercase;
+		a {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+}
+.modelPageMid{
+	width: 22%;
+	padding: 15px;
+	border-right: 1px solid black;
+	min-height: 100vh;
+	.modelHeader {
+		margin: 0;
+		margin-bottom: 60px;
+		text-transform: uppercase;;
+		font-weight: 700;
+	}
+	.modelName{
+		font-weight: 900;
+		text-transform: uppercase;
+		margin: 3px 0 7px;
+	}
+	.instagram {
+		margin-bottom: 70px;
+		font-weight: 900;
+		a {
+			color: #616161;
+		}
+	}
+}
+.mainmodelImgs {
+	width: 56%;
+}
+#nav-below {
+	// @extend .flex;
+	// justify-content:space-between;
+	// @include fontSize(9);
+	text-align: center;
+	width: 19%;
+	text-transform: uppercase;
+	position: fixed;
+	bottom: 0;
+}
+.measurements {
+	p{
+		margin: 0;
+	}
+}
+
+
 
 
 
