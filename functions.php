@@ -45,7 +45,8 @@ of writing our own link tags in the header. */
 function hackeryou_styles(){
 	wp_enqueue_style('style', get_stylesheet_uri() );
 
-	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+	wp_enqueue_style('fontawesome', '//use.fontawesome.com/releases/v5.0.7/css/all.css');
+	wp_enqueue_style('bxslider', 'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css');
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -59,11 +60,28 @@ function hackeryou_scripts() {
 	wp_deregister_script('jquery');
   wp_enqueue_script(
   	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://code.jquery.com/jquery-latest.min.js",
   	false, //dependencies
   	null, //version number
   	true //load in footer
   );
+
+  	wp_deregister_script('masonryjs');
+    wp_enqueue_script(
+    	'masonaryjs',
+    	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://masonry.desandro.com/masonry.pkgd.js",
+    	false, //dependencies
+    	null, //version number
+    	true //load in footer
+    );
+  	wp_deregister_script('bxsliderjs');
+    wp_enqueue_script(
+    	'bxslidejs',
+    	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js",
+    	false, //dependencies
+    	null, //version number
+    	true //load in footer
+    );
 
   wp_enqueue_script(
     'plugins', //handle

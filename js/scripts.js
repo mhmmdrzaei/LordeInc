@@ -19,5 +19,22 @@ $(function(){
 
 	});
 
+	$('.bxslider').bxSlider({
+		oneToOneTouch: true,
+		controls: true,
+		pagerType: 'short',
+		prevText: '←',
+		nextText:'→',
+		adaptiveHeight: true,
+
+	});
+
+	$('.grid').masonry({
+	  itemSelector: '.grid-item',
+	  // use element for option
+	  columnWidth: '.grid-sizer',
+	  percentPosition: true
+	});
+
 
 });

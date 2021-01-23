@@ -121,11 +121,12 @@
     $images = get_field('gallery');
     $size = 'full'; // (thumbnail, medium, large, full or custom size)
     if( $images ): ?>
-      <div class="gallery">
+
+      <ul class="bxslider">
         <?php foreach( $images as $image ): ?>
-          <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <?php endforeach; ?>
-      </div>
+          <li><img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+        <?php endforeach; ?></li>
+      </ul>
 
     <?php endif; ?>
     

@@ -120,14 +120,14 @@ body {
 	display: none;
 	position: fixed;
 	width: 21%;
-	top: 25px;
+	top: 0px;
 	overflow-y:scroll;
 	padding: 1%;
-	padding-top: 50px;
+	padding-top: 80px;
 	z-index: 30;
 	// background: #FAF6EB;
 	// background: white;
-	height: 97vh;
+	height: 100vh;
 	ul {
 		margin: 0;
 		padding-left: 10px;
@@ -250,9 +250,10 @@ body {
 }
 //footer
 footer{
-	position: absolute;
-	bottom: -39px;
+	position: fixed;
+	bottom: 0px;
 	right: 18px;
+	@include fontSize(6);
 }
 
 //model pages 
@@ -313,6 +314,137 @@ footer{
 	p{
 		margin: 0;
 	}
+}
+
+//bxslider 
+
+.bx-wrapper img {
+    margin: 0 auto;
+   
+    max-height: 500px !important;
+}
+
+.bx-wrapper{
+	padding: 5px;
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	width: 90%;
+	margin: 30px auto;
+	// padding-bottom: 20px !important;
+}
+.bx-prev {
+	background: none !important;
+	// content:'←' !important;
+	// cursor: w-resize !important;
+}
+.bx-next {
+	background: none !important;
+	// content:'←' !important;
+	// cursor: e-resize !important;
+}
+.bx-default-pager {
+	padding: 0 !important;
+	// position: inherit !important;
+	// display: none !important;
+}
+.bx-controls-direction {
+	display: flex !important;
+	justify-content: space-between;
+}
+
+.bx-wrapper .bx-controls-direction a {
+	// position: inherit !important;
+	@include fontSize(15);
+	text-decoration: none;
+	padding: 16px 10px;
+	text-indent: 0 !important;
+
+}
+//Casting 
+
+.pageCasting {
+	@extend .flex;
+	justify-content: space-between;
+}
+.castingpageSide {
+	width: 20%;
+	padding: 15px;
+	h1 {
+		position: fixed;
+	}
+	p.moreinfoCasting {
+		position: fixed;
+		bottom: 15px;
+		width: 17%;
+		margin: 0 auto;
+	}
+}
+.castingPagePosts {
+	width: 78%;
+
+}
+//masonary
+
+.grid {
+  width: 95%;
+  margin: 0 auto;
+  // max-width: 800px;
+}
+
+.grid-item {
+  height: auto;
+  float: left;
+  padding: 0 3px;
+}
+.grid-sizer,
+.grid-item {
+  width: 30%;
+}
+.grid-item--width1 {
+	width: 30%;
+}
+.grid-item--width2 {
+	width: 60%;
+}
+.grid-item--width3 {
+	width: 90%;
+}
+
+
+.castingNameOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+}
+
+
+ .grid-item:hover .castingNameOverlay {
+  opacity: 1;
+}
+
+.textCasting {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transition: .5s ease;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  // z-index: 100;
+  // text-align: center;
+}
+
+.grid-item:hover .textCasting {
+  opacity: 1;
 }
 
 
