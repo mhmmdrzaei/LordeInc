@@ -10,14 +10,33 @@ $(function(){
 	$('.morePress').click(function() {
   		$('.pressMid').addClass('openMid');
   		$('.pressMid').removeClass('closeMiddle');
+  		$('.mainPageMid').removeClass('openMidMain');
   
 
 	});
+	
 	$('.closeMid').click(function(){
 		$('.pressMid').removeClass('openMid');
 		$('.pressMid').addClass('closeMiddle');
 
 	});
+
+	$('.missionMore').click(function() {
+	  	$('.mainPageMid').addClass('openMidMain');
+	  	$('.mission').removeClass('closeMiddleMission');
+	  	$('.pressMid').removeClass('openMid');
+	  
+
+	});
+	$('.closeMission').click(function() {
+	  	$('.mission').removeClass('openMidMain');
+	  	$('.mission').addClass('closeMiddleMission');
+	  
+
+	});
+
+	
+
 
 	$('.bxslider').bxSlider({
 		oneToOneTouch: true,

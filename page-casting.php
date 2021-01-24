@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
 <main class="pageCasting">
-	<section class="mainPageSide castingpageSide">
+	<section class="castingpageSide">
 	    <h1>
 	      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
 	        <?php bloginfo( 'name' ); ?>

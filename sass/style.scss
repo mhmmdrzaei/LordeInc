@@ -119,7 +119,7 @@ body {
 .pressMid {
 	display: none;
 	position: fixed;
-	width: 21%;
+	width: 22%;
 	top: 0px;
 	overflow-y:scroll;
 	padding: 1%;
@@ -127,6 +127,7 @@ body {
 	z-index: 30;
 	// background: #FAF6EB;
 	// background: white;
+	
 	height: 100vh;
 	ul {
 		margin: 0;
@@ -141,12 +142,14 @@ body {
 		margin-bottom: 25px;
 		cursor: pointer;
 		@include fontSize(8);
+		margin-right: 5px;
 	}
 
 }
 .openMid {
 	display: block;
 	animation: splash 1s normal forwards ease-in-out;
+	border-right: 2px solid black;
 	// z-index: 30;
 	// background: #FAF6EB;
 	// // background: white;
@@ -321,7 +324,7 @@ footer{
 .bx-wrapper img {
     margin: 0 auto;
    
-    max-height: 500px !important;
+    max-height: 80vh !important;
 }
 
 .bx-wrapper{
@@ -370,9 +373,19 @@ footer{
 .castingpageSide {
 	width: 20%;
 	padding: 15px;
+	z-index: 10;
+	border-right: 1px solid black;
+	// padding-right: 10px;
 	h1 {
+		margin: 0;
 		position: fixed;
-	}
+		text-transform: uppercase;
+		a {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}	
 	p.moreinfoCasting {
 		position: fixed;
 		bottom: 15px;
@@ -445,6 +458,85 @@ footer{
 
 .grid-item:hover .textCasting {
   opacity: 1;
+}
+.missionMore{
+	display: none;
+	margin-bottom: 20px;
+	font-weight: 900;
+
+}
+.closeMission {
+	display: none;
+}
+
+//media Queries 
+@media(max-width: 970px){ 
+.mainPageMid {
+	display: none;
+
+}
+.closeMission {
+	display: block;
+}
+.openMidMain {
+	display: block;
+	position: absolute;
+
+	
+}
+.openMid {
+	border-right: 1px solid;
+}
+@keyframes midmove {
+ from {left: -20%;}
+  to {left: 27%;}
+}
+
+.mission {
+	left: 27%;
+	z-index: 100;
+	height: 100vh;
+	width: 25%;
+	animation: midmove 1s normal forwards ease-in-out;
+	border-right: 2px solid black;
+	 h2 {
+	 	margin:0px 0 23px;
+	 }
+}
+.missionMore {
+	display: block;
+}
+.mainPageSide {
+	width: 27%;
+}
+.mainPagePosts {
+	width: 70%;
+}
+.closeMission {
+	text-align: right;
+	margin-right: 5px;
+	cursor: pointer;
+
+}
+.closeMiddleMission {
+	animation: midmoveOut 1s normal forwards ease-in-out;
+}
+@keyframes midmoveOut {
+ from {left: 27%;}
+  to {left: -27%;}
+}
+.pressMid {
+	width: 25%;
+}
+@keyframes splash {
+ from {left: -30%;}
+  to {left: 27%;}
+}
+@keyframes splish {
+ from {left: 27%;}
+  to {left: -30%;}
+}
+
 }
 
 

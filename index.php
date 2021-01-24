@@ -28,6 +28,9 @@
 		</div>
 	
 		<section class="moreLinks">
+			<button class="missionMore">
+				Mission
+			</button>
 			<section class="casting">
 				<?php 
 					$post   = get_post( 19 );
@@ -43,39 +46,41 @@
 		</section>
 		</section>
 	</section>
+	<section class="pressMid" style="background: <?php the_field('background_color', 'option'); ?>">
+		<div class="closeMid">← CLOSE</div>
+		<ul >
+		<?php $argPress = array( 
+			'post_type' => 'press',
+			'posts_per_page' => -1
+			 );
+		  query_posts( $argPress ); // hijack the main loop
+		  while ( have_posts() ) : the_post();
+		    ?>
+		     <?php echo $argPress->current_post;
+		    ?>
+		    <li>
+		    	<a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
+		    </li>
+			 
+		   <?php
+		  endwhile;
+		  ?>
+		  </ul>
+		  <?php
+		  wp_reset_query();
+		  ?> 
+		  
+	</section>
 	<section class="mainPageMid">
-		<section class="pressMid" style="background: <?php the_field('background_color', 'option'); ?>">
-			<div class="closeMid">← CLOSE</div>
-			<ul >
-			<?php $argPress = array( 
-				'post_type' => 'press',
-				'posts_per_page' => -1
-				 );
-			  query_posts( $argPress ); // hijack the main loop
-			  while ( have_posts() ) : the_post();
-			    ?>
-			     <?php echo $argPress->current_post;
-			    ?>
-			    <li>
-			    	<a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
-			    </li>
-				 
-			   <?php
-			  endwhile;
-			  ?>
-			  </ul>
-			  <?php
-			  wp_reset_query();
-			  ?> 
-			  
-		</section>
-		<section class="mission">
+		<section class="mission" style="background: <?php the_field('background_color', 'option'); ?>">
+
 			<?php 
 				$post   = get_post( 48 );
 
 				$output =  apply_filters( 'the_content', $post->post_content );
 				?>
 			<h2><?php the_title(); ?></h2>
+			<div class="closeMission">← CLOSE</div>
 			<?php 
 				
 				echo $output;
