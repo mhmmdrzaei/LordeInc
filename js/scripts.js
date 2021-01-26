@@ -34,6 +34,13 @@ $(function(){
 	  
 
 	});
+	$('.menuClick').click(function(){
+		$('.mainPageSide').css('display','block');
+		$('.mainPageSide h1').css('display','none');
+		$('.mainPageSideInner').addClass('innerActivate');
+		$(this).css('display','none');
+		$('.closeClickMenu').fadeIn(1500);
+	});
 
 	
 

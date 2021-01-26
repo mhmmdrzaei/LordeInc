@@ -309,3 +309,42 @@ if( function_exists('acf_add_options_page') ) {
 	
 	
 }
+?>
+<?php 
+if(is_user_logged_in()) {
+
+	// add_action('wp_head', 'offset_header', 99);
+
+	function offset_header() { ?>
+
+		<style type="text/css">
+
+			.website-header, .toggle-nav, .tickets, .menu-primary {
+				top:32px;
+			}
+
+			html {
+				margin-top: 0 !important;
+			}
+
+			* html body {
+				margin-top: 0 !important;
+			}
+
+			@media screen and ( max-width: 782px ) {
+				.website-header, .toggle-nav, .tickets, .menu-primary {
+					top:46px;
+				}
+				html {
+					margin-top: 0 !important;
+				}
+				* html body {
+					margin-top: 0 !important;
+				}
+			}
+
+		</style>
+
+	<?php }
+
+}

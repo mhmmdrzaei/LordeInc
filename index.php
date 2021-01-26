@@ -2,13 +2,22 @@
 <?php get_header(); ?>
 
 <main class="homePage">
-	<section class="mainPageSide">
-		<section class="mainPageSideInner">
-	    <h1>
+	<section class="MobileMenu">
+		<h1>
 	      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
 	        <?php bloginfo( 'name' ); ?>
 	      </a>
 	    </h1>
+	    <button class="menuClick">Menu</button>
+	    <button class="closeClickMenu">x</button>
+	</section>
+	<section class="mainPageSide">
+		<h1>
+	      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
+	        <?php bloginfo( 'name' ); ?>
+	      </a>
+	    </h1>
+		<section class="mainPageSideInner" style="background: <?php the_field('background_color', 'option'); ?>">
 		<div class="castingInfo">
 			<?php the_field('casting_&_booking_info_text', 'option'); ?>
 			<!-- <a href="mailto:<?php the_field('lorde_inc_email', 'option'); ?>"><?php the_field('lorde_inc_email', 'option'); ?></a> -->

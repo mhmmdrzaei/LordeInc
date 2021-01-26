@@ -64,13 +64,18 @@ body {
 	// padding-right: 10px;
 	h1 {
 		margin: 0;
+		padding: 15px;
 		text-transform: uppercase;
+		position: fixed;
 		a {
 			&:hover {
 				text-decoration: none;
 			}
 		}
 	}
+}
+.MobileMenu {
+	display: none;
 }
 
 .castingInfo {
@@ -106,8 +111,10 @@ body {
 }
 .mainPageSideInner {
 	position: fixed;
-	width: 20%;
+	top: 80px;
+	width: 19%;
 	padding: 15px;
+	padding-top: 0;
 }
 //mid page 
 .mainPageMid {
@@ -123,7 +130,7 @@ body {
 	top: 0px;
 	overflow-y:scroll;
 	padding: 1%;
-	padding-top: 80px;
+	padding-top: 50px;
 	z-index: 30;
 	// background: #FAF6EB;
 	// background: white;
@@ -473,6 +480,7 @@ footer{
 @media(max-width: 970px){ 
 .mainPageMid {
 	display: none;
+	border: none;
 
 }
 .closeMission {
@@ -498,7 +506,7 @@ footer{
 	height: 100vh;
 	width: 25%;
 	animation: midmove 1s normal forwards ease-in-out;
-	border-right: 2px solid black;
+	border-right: 1.5px solid black;
 	 h2 {
 	 	margin:0px 0 23px;
 	 }
@@ -527,6 +535,8 @@ footer{
 }
 .pressMid {
 	width: 25%;
+	padding-top: 100px;
+
 }
 @keyframes splash {
  from {left: -30%;}
@@ -538,7 +548,104 @@ footer{
 }
 
 }
+@media(max-width: 800px){ 
+.mainPageSide {
+	width: 32%;
+}
+.mainPagePosts {
+	width: 65%;
+}
+.mission, .pressMid {
+	width: 32%;
+}
 
+
+@keyframes midmove {
+ from {left: -40%;}
+  to {left: 32%;}
+}
+@keyframes midmoveOut {
+ from {left: 32%;}
+  to {left: -40%;}
+}
+
+@keyframes splash {
+ from {left: -40%;}
+  to {left: 32%;}
+}
+@keyframes splish {
+ from {left: 32%;}
+  to {left: -40%;}
+}
+
+}
+
+@media(max-width: 640px){ 
+
+.MobileMenu{
+	display: block;
+	position: fixed;
+	z-index: 100;
+	h1 {
+		text-transform: uppercase;
+		margin: 0;
+		padding: 15% 15% 0;
+		a {
+			text-decoration: none;
+
+		}
+	}
+}
+.menuClick {
+	background: transparent;
+	border: none;
+	padding-left: 18%;
+	text-transform: uppercase;
+	font-weight: 900;
+	@include fontSize(9);
+	outline: none;
+}
+.mainPageSide {
+	display: none;
+}
+.containerLink {
+	width: 100%;
+}
+.mainPagePosts {
+	width: 91%;
+	margin: 0 auto;
+}
+@keyframes innerActivate {
+ from {left: -100%;}
+  to {left: 0%;}
+}
+.innerActivate {
+	animation: innerActivate 1s normal forwards ease-in-out;
+	width: 100%;
+	border: none;
+	height: 100vh;
+	top: 0;
+	padding: 5%;
+    padding-top: 18%;
+}
+.closeClickMenu {
+	display: none;
+    background: transparent;
+    border: none;
+    position: fixed;
+    right: 5%;
+    top: 1.5%;
+    // padding-left: 18%;
+    // text-transform: uppercase;
+    // font-weight: 900;
+    @include fontSize(13);
+    outline: none;
+
+}
+.moreLinks {
+	margin-top: 28px;
+}
+}
 
 
 
