@@ -31,6 +31,7 @@ main {
 	max-width: 1800px;
 	margin: 0 auto;
 	min-height: 100vh;
+	padding: 15px;
 	
 	
 }
@@ -60,11 +61,11 @@ body {
 .mainPageSide {
 	width: 20%;
 	z-index: 10;
-	border-right: 1px solid black;
+	border-right: 1px solid #dadbdd;
 	// padding-right: 10px;
 	h1 {
 		margin: 0;
-		padding: 15px;
+		// padding: 15px;
 		text-transform: uppercase;
 		position: fixed;
 		a {
@@ -113,15 +114,15 @@ body {
 	position: fixed;
 	top: 80px;
 	width: 19%;
-	padding: 15px;
-	padding-top: 0;
+	padding-right: 15px;
+	// padding-top: 0;
 }
 //mid page 
 .mainPageMid {
 
 	width: 21%;
 	padding-right: 10px;
-	border-right: 1px solid;
+	border-right: 1px solid #dadbdd;
 }
 .pressMid {
 	display: none;
@@ -156,7 +157,7 @@ body {
 .openMid {
 	display: block;
 	animation: splash 1s normal forwards ease-in-out;
-	border-right: 2px solid black;
+	border-right: 1px solid #dadbdd;
 	// z-index: 30;
 	// background: #FAF6EB;
 	// // background: white;
@@ -180,7 +181,8 @@ body {
 	position: fixed;
 	width: 21%;
 	left: 20%;
-	padding: 15px;
+	padding-right: 15px;
+
 	h2 {
 		margin: 0 0 52px;
 	}
@@ -188,13 +190,13 @@ body {
 //main posts 
 .mainPagePosts {
 	width: 55%;
-	padding-top: 15px;
+	// padding-top: 15px;
 	// @extend .flex;
 	// justify-content: space-between;
 	display: grid;
 	align-self:end;
 	  /* Auto-fit as many items on a row as possible without going under 180px */
-	  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+	  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 	  /* A little spacing between articles */
 	  grid-gap: 1em;
 	a {
@@ -220,10 +222,11 @@ body {
 // }
 .containerLink {
   position: relative;
-  width: 92%;
+  width: 100%;
 }
 
 .modelNameOverlay {
+	display: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -270,8 +273,8 @@ footer{
 
 .modelPageSide {
 	width: 21%;
-	padding: 15px;
-	border-right: 1px solid black;
+	padding-right: 15px;
+	border-right: 1px solid #dadbdd;
 	h1 {
 		margin: 0;
 		text-transform: uppercase;
@@ -285,8 +288,8 @@ footer{
 }
 .modelPageMid{
 	width: 22%;
-	padding: 15px;
-	border-right: 1px solid black;
+	padding-right: 15px;
+	border-right: 1px solid #dadbdd;
 	min-height: 100vh;
 	.modelHeader {
 		margin: 0;
@@ -379,9 +382,9 @@ footer{
 }
 .castingpageSide {
 	width: 20%;
-	padding: 15px;
+	padding-right: 15px;
 	z-index: 10;
-	border-right: 1px solid black;
+	border-right: 1px solid #dadbdd;
 	// padding-right: 10px;
 	h1 {
 		margin: 0;
@@ -407,7 +410,7 @@ footer{
 //masonary
 
 .grid {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   // max-width: 800px;
 }
@@ -419,20 +422,21 @@ footer{
 }
 .grid-sizer,
 .grid-item {
-  width: 30%;
+  width: 33%;
 }
 .grid-item--width1 {
-	width: 30%;
+	width: 33%;
 }
 .grid-item--width2 {
-	width: 60%;
+	width: 66%;
 }
 .grid-item--width3 {
-	width: 90%;
+	width: 99%;
 }
 
 
 .castingNameOverlay {
+	display: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -442,7 +446,7 @@ footer{
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: white;
+  // background-color: white;
 }
 
 
@@ -452,6 +456,7 @@ footer{
 
 .textCasting {
   position: absolute;
+  color:white;
   top: 50%;
   left: 50%;
   opacity: 0;
@@ -493,7 +498,7 @@ footer{
 	
 }
 .openMid {
-	border-right: 1px solid;
+	border-right: 1px solid #dadbdd;
 }
 @keyframes midmove {
  from {left: -20%;}
@@ -506,7 +511,7 @@ footer{
 	height: 100vh;
 	width: 25%;
 	animation: midmove 1s normal forwards ease-in-out;
-	border-right: 1.5px solid black;
+	border-right: 1px solid #dadbdd;
 	 h2 {
 	 	margin:0px 0 23px;
 	 }
@@ -581,6 +586,10 @@ footer{
 }
 
 @media(max-width: 640px){ 
+.mainPagePosts{
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+}
 
 .MobileMenu{
 	display: block;
@@ -651,6 +660,35 @@ footer{
 }
 .moreLinks {
 	margin-top: 28px;
+}
+.mission, .pressMid {
+	width: 97%;
+}
+.mission, .pressMid {
+	padding: 0 25px 0 15px;
+	height: 79vh;
+	top: 75px;
+	border: none;
+	h2 {
+		display: none;
+	}
+}
+@keyframes midmove {
+ from {left: -100%;}
+  to {left: 15px;}
+}
+@keyframes midmoveOut {
+ from {left: 15px }
+  to {left: -100%;}
+}
+
+@keyframes splash {
+ from {left: -100%;}
+  to {left: 15px;}
+}
+@keyframes splish {
+ from {left: 15px}
+  to {left: -100%;}
 }
 }
 

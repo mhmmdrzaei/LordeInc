@@ -40,13 +40,20 @@ $(function(){
 		$('.mainPageSideInner').addClass('innerActivate');
 		// $('.mainPageSideInner').removeClass('innerMoveBack');
 		$(this).css('display','none');
+		// $('.mission').css('display','block');
 		$('.closeClickMenu').fadeIn(1500);
+		// $('.mission').addClass('closeMiddleMission');
 	});
 
 	$('.closeClickMenu').click(function(){
-		$('.mainPageSide').css('display','none');
+		// $('.mainPageSide').fadeOut(2500);
+		$('.mainPageSide').css('display','none').delay( 800 );
 		$('.mainPageSide h1').css('display','block');
 		$('.mainPageSideInner').removeClass('innerActivate');
+		$('.mission').css('display','none');
+		$('.pressMid').removeClass('openMid');
+		$('.mission').addClass('closeMiddleMission');
+		$('.pressMid').addClass('closeMiddle');
 		// $('.mainPageSideInner').addClass('innerMoveBack');
 		$('.menuClick').fadeIn(700);
 		$(this).fadeOut(500);
