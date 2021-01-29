@@ -1,11 +1,21 @@
 <?php get_header(); ?>
 <main class="homePage">
-  <section class="modelPageSide">
-      <h1>
+  <section class="MobileMenu">
+    <h1>
         <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
           <?php bloginfo( 'name' ); ?>
         </a>
       </h1>
+      <button class="menuClick">Menu</button>
+      <button class="closeClickMenu">x</button>
+  </section>
+  <section class="mainPageSide">
+    <h1>
+        <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
+          <?php bloginfo( 'name' ); ?>
+        </a>
+      </h1>
+    <section class="mainPageSideInner" style="background: <?php the_field('background_color', 'option'); ?>">
     <div class="castingInfo">
       <?php the_field('casting_&_booking_info_text', 'option'); ?>
       <!-- <a href="mailto:<?php the_field('lorde_inc_email', 'option'); ?>"><?php the_field('lorde_inc_email', 'option'); ?></a> -->
@@ -25,6 +35,9 @@
     </div>
   
     <section class="moreLinks">
+      <button class="missionMore missionMoreModel">
+        Mission
+      </button>
       <section class="casting">
         <?php 
           $post   = get_post( 19 );
@@ -38,33 +51,50 @@
       <a href="#" target="_blank">Journal</a>
       <a href="https://www.instagram.com/lordeinc/" target="_blank">Instagram</a>
     </section>
+    </section>
+  </section>
+    <section class="mission modelMissionMid" style="background: <?php the_field('background_color', 'option'); ?>">
+
+      <?php 
+        $post   = get_post( 48 );
+
+        $output =  apply_filters( 'the_content', $post->post_content );
+        ?>
+      <h2><?php the_title(); ?></h2>
+      <div class="closeMission closeMissionModelOne">← CLOSE</div>
+      <?php 
+        
+        echo $output;
+
+       ?>
+
+    </section>
+  <section class="pressMid pressModelMid" style="background: <?php the_field('background_color', 'option'); ?>">
+    <div class="closeMid">← CLOSE</div>
+    <ul >
+    <?php $argPress = array( 
+      'post_type' => 'press',
+      'posts_per_page' => -1
+       );
+      query_posts( $argPress ); // hijack the main loop
+      while ( have_posts() ) : the_post();
+        ?>
+         <?php echo $argPress->current_post;
+        ?>
+        <li>
+          <a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
+        </li>
+       
+       <?php
+      endwhile;
+      ?>
+      </ul>
+      <?php
+      wp_reset_query();
+      ?> 
+      
   </section>
   <section class="modelPageMid">
-    <section class="pressMid" style="background: <?php the_field('background_color', 'option'); ?>">
-      <div class="closeMid">← CLOSE</div>
-      <ul >
-      <?php $argPress = array( 
-        'post_type' => 'press',
-        'posts_per_page' => -1
-         );
-        query_posts( $argPress ); // hijack the main loop
-        while ( have_posts() ) : the_post();
-          ?>
-           <?php echo $argPress->current_post;
-          ?>
-          <li>
-            <a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
-          </li>
-         
-         <?php
-        endwhile;
-        ?>
-        </ul>
-        <?php
-        wp_reset_query();
-        ?> 
-        
-    </section>
     <section class="modelDetails">
       <h2 class="modelHeader">
         Model
@@ -108,14 +138,12 @@
        </p>
       </div>
       <div id="nav-below" class="navigation">
-         <p class="nav-previous"><?php previous_post_link('%link', '&#8592; Previous Model'); ?></p>
-         <p class="nav-next"><?php next_post_link('%link', 'Next Model &#8594;'); ?></p>
+         <p class="nav-previous"><?php previous_post_link('%link', '&#8592; Previous'); ?></p>
+         <p class="nav-next"><?php next_post_link('%link', 'Next &#8594;'); ?></p>
        </div>
 
     </section>
-    
-  </section>
-  <section class="mainmodelImgs">
+    <section class="mainmodelImgs">
 
     <?php 
     $images = get_field('gallery');
@@ -131,6 +159,7 @@
     <?php endif; ?>
     
   </section>
+</section>
 </main>
 
  <?php get_footer(); ?>

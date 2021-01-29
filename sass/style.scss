@@ -19,6 +19,11 @@ Default Styling
   src: url('Akkurat-Mono.OTF');
 }
 
+@font-face {
+  font-family: 'akkuratlight';
+  src: url('AkkurLig.OTF');
+}
+
 @mixin fontSize($sizeValue){
     font-size: $sizeValue * 1px;
     font-size: ($sizeValue/10) * 1rem;
@@ -28,9 +33,9 @@ Default Styling
 	flex-flow: row wrap;
 }
 main {
-	max-width: 1800px;
+	max-width: 1200px;
 	margin: 0 auto;
-	min-height: 100vh;
+	// min-height: 95vh;
 	padding: 15px;
 	
 	
@@ -50,9 +55,10 @@ img {
 
 body {
 	font-family: akkuratMono, sans-serif;
+	// font-family: akkuratlight, sans-serif;
 	// background-color: #FAF6EB;
 	// padding: 20px;
-	@include fontSize(8);
+	@include fontSize(7);
 }
 .homePage {
 	@extend .flex;
@@ -61,6 +67,7 @@ body {
 .mainPageSide {
 	width: 20%;
 	z-index: 10;
+	height: 95vh;
 	border-right: 1px solid #dadbdd;
 	// padding-right: 10px;
 	h1 {
@@ -80,7 +87,7 @@ body {
 }
 
 .castingInfo {
-	margin: 52px 0 56px;
+	margin: 0px 0 56px;
 }
 
 .submissionsInfo{
@@ -127,12 +134,14 @@ body {
 .pressMid {
 	display: none;
 	position: fixed;
-	width: 22%;
-	top: 0px;
+	width: 23.5%;
+	top: 0;
 	overflow-y:scroll;
-	padding: 1%;
+	// padding: 1%;
 	padding-top: 50px;
-	z-index: 30;
+	z-index: 10000;
+	border-right: 1px solid #dadbdd;
+	border-left: 1px solid #dadbdd;
 	// background: #FAF6EB;
 	// background: white;
 	
@@ -154,10 +163,13 @@ body {
 	}
 
 }
+.pressModelMid {
+	width: 21%;
+}
 .openMid {
 	display: block;
 	animation: splash 1s normal forwards ease-in-out;
-	border-right: 1px solid #dadbdd;
+	
 	// z-index: 30;
 	// background: #FAF6EB;
 	// // background: white;
@@ -165,8 +177,8 @@ body {
 	
 }
 @keyframes splash {
- from {left: -20%;}
-  to {left: 21%;}
+ from {left: -25%;}
+  to {left: 20%;}
 }
 .closeMiddle {
 	display: block;
@@ -174,14 +186,15 @@ body {
 
 }
 @keyframes splish {
- from {left: 21%;}
-  to {left: -22%;}
+ from {left: 20%;}
+  to {left: -25%;}
 }
 .mission {
 	position: fixed;
 	width: 21%;
-	left: 20%;
-	padding-right: 15px;
+	left: 21%;
+	padding: 0 15px;
+	// height: 95vh;
 
 	h2 {
 		margin: 0 0 52px;
@@ -270,11 +283,21 @@ footer{
 }
 
 //model pages 
+// .modelPageMission {
+// 	display: none;
+// }
+// .modelDetails {
+// 	position: fixed;
+// }
+
 
 .modelPageSide {
 	width: 21%;
 	padding-right: 15px;
 	border-right: 1px solid #dadbdd;
+	.castingInfo {
+	margin: 52px 0 56px;
+	}
 	h1 {
 		margin: 0;
 		text-transform: uppercase;
@@ -287,10 +310,14 @@ footer{
 
 }
 .modelPageMid{
-	width: 22%;
-	padding-right: 15px;
+	@extend .flex;
+	width: 80%;
+}
+.modelDetails{
+	width: 26%;
+	padding: 3px 15px;
 	border-right: 1px solid #dadbdd;
-	min-height: 100vh;
+	min-height: 95vh;
 	.modelHeader {
 		margin: 0;
 		margin-bottom: 60px;
@@ -311,17 +338,18 @@ footer{
 	}
 }
 .mainmodelImgs {
-	width: 56%;
+	width: 72%;
 }
 #nav-below {
-	// @extend .flex;
-	// justify-content:space-between;
-	// @include fontSize(9);
+	@extend .flex;
+	justify-content: space-around;
+	@include fontSize(6);
 	text-align: center;
 	width: 19%;
 	text-transform: uppercase;
 	position: fixed;
 	bottom: 0;
+
 }
 .measurements {
 	p{
@@ -342,8 +370,8 @@ footer{
 	background: transparent !important;
 	border: none !important;
 	box-shadow: none !important;
-	width: 90%;
-	margin: 30px auto;
+	width: 100%;
+	margin: 30px auto !important;
 	// padding-bottom: 20px !important;
 }
 .bx-prev {
@@ -380,31 +408,10 @@ footer{
 	@extend .flex;
 	justify-content: space-between;
 }
-.castingpageSide {
-	width: 20%;
-	padding-right: 15px;
-	z-index: 10;
-	border-right: 1px solid #dadbdd;
-	// padding-right: 10px;
-	h1 {
-		margin: 0;
-		position: fixed;
-		text-transform: uppercase;
-		a {
-			&:hover {
-				text-decoration: none;
-			}
-		}
-	}	
-	p.moreinfoCasting {
-		position: fixed;
-		bottom: 15px;
-		width: 17%;
-		margin: 0 auto;
-	}
-}
 .castingPagePosts {
 	width: 78%;
+	padding-left: 15px;
+	border-left: 1px solid #dadbdd;
 
 }
 //masonary
@@ -477,8 +484,63 @@ footer{
 	font-weight: 900;
 
 }
+.missionMoreModel{
+	display: block;
+}
 .closeMission {
 	display: none;
+}
+.modelMissionMid {
+	display: none;
+	left: 21%;
+	z-index: 100;
+	height: 95vh;
+	width: 21%;
+	animation: midmove 1s normal forwards ease-in-out;
+	border: 1px solid #dadbdd;
+	border-bottom: 0;
+	border-top: 0;
+	 h2 {
+	 	margin:0px 0 23px;
+	 }
+
+}
+.closeMissionModelOne {
+	display: block;
+	text-align: right;
+	margin-right: 5px;
+	cursor: pointer;
+	
+}
+.closeMiddleMission {
+	animation: midmoveOut 1s normal forwards ease-in-out;
+}
+@keyframes midmoveOut {
+ from {left: 20%;}
+  to {left: -27%;}
+}
+.openMidMain {
+	display: block;
+	position: absolute;
+
+	
+}
+@keyframes midmove {
+ from {left: -21%;}
+  to {left: 20%;}
+}
+.moreinfoCasting {
+	position: fixed;
+	width: 21%;
+	bottom: 15px;
+	margin: 0;
+}
+.castingPageSide {
+	border: none;
+	// padding-right: 10px;
+}
+.bx-wrapper .bx-controls-direction a {
+	z-index: 10 !important;
 }
 
 //media Queries 
@@ -497,8 +559,11 @@ footer{
 
 	
 }
+.castingPagePosts {
+	width: 70%;
+}
 .openMid {
-	border-right: 1px solid #dadbdd;
+	// border-right: 1px solid #dadbdd;
 }
 @keyframes midmove {
  from {left: -20%;}
@@ -507,11 +572,15 @@ footer{
 
 .mission {
 	left: 27%;
-	z-index: 100;
+	top: 0;
 	height: 100vh;
+	z-index: 100;
 	width: 25%;
+	padding: 15px;
 	animation: midmove 1s normal forwards ease-in-out;
-	border-right: 1px solid #dadbdd;
+	border: 1px solid #dadbdd;
+	border-bottom: 0;
+	border-top: 0;
 	 h2 {
 	 	margin:0px 0 23px;
 	 }
@@ -540,8 +609,7 @@ footer{
 }
 .pressMid {
 	width: 25%;
-	padding-top: 100px;
-
+	padding: 30px 15px;
 }
 @keyframes splash {
  from {left: -30%;}
@@ -551,9 +619,57 @@ footer{
  from {left: 27%;}
   to {left: -30%;}
 }
+.modelPageMid {
+	width: 68%;
+	display: block;
+	.mainmodelImgs {
+		width: 100%;
+	}
+
+	.modelDetails {
+		min-height: auto;
+		border:none;
+		display: flex;
+		flex-flow:wrap;
+		padding: 0 15px;
+		width: 100%;
+		.modelName {
+			margin: 7px 0;
+		}
+		// justify-content: space-between;
+		.measurements {
+			display: flex;
+			flex-flow: wrap;
+			width: 100%;
+			h4 {
+				width: 100%;
+				margin: 5px 0;
+			}
+			p {
+				width: 50%;
+			}
+		}
+	}
+	#nav-below {
+		position: inherit;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.instagram {
+		margin: 6px 5px 7px;
+
+	}
+	.modelHeader {
+		margin-bottom: 0;
+		width: 100%;
+	}
+}
 
 }
 @media(max-width: 800px){ 
+.castingPagePosts {
+	width: 67%;
+}
 .mainPageSide {
 	width: 32%;
 }
@@ -586,6 +702,25 @@ footer{
 }
 
 @media(max-width: 640px){ 
+body {
+	@include fontSize(10);
+}
+.castingPagePosts {
+	width: 100%;
+	border: none;
+	padding: 0;
+}
+.modelPageMid {
+	width: 100%;
+	margin-top: 55px;
+	.modelDetails {
+		padding: 0;
+		.modelHeader {
+		display: none;
+		}
+	}
+
+}
 .mainPagePosts{
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
@@ -598,7 +733,7 @@ footer{
 	h1 {
 		text-transform: uppercase;
 		margin: 0;
-		padding: 15% 15% 0;
+		// padding: 15% 15% 0;
 		a {
 			text-decoration: none;
 
@@ -608,14 +743,15 @@ footer{
 .menuClick {
 	background: transparent;
 	border: none;
-	padding-left: 18%;
+	padding: 0 0 0 1px;
 	text-transform: uppercase;
 	font-weight: 900;
-	@include fontSize(9);
+	@include fontSize(10);
 	outline: none;
 }
 .mainPageSide {
 	display: none;
+	border: none;
 }
 .containerLink {
 	width: 100%;
@@ -629,13 +765,19 @@ footer{
   to {left: 0%;}
 }
 .innerActivate {
-	animation: innerActivate 1s normal forwards ease-in-out;
+	animation: innerActivate .5s normal forwards ease-in-out;
 	width: 100%;
 	border: none;
-	height: 100vh;
+	height: 95vh;
 	top: 0;
-	padding: 5%;
-    padding-top: 18%;
+	z-index: 10001;
+	// position: absolute;
+	padding: 0 15px;
+    padding-top: 32%;
+    height: 100vh;
+}
+.moreinfoCasting {
+	width: 70%;
 }
 // @keyframes innerMoveBack {
 //  from {left: 0%;}
@@ -661,13 +803,13 @@ footer{
 .moreLinks {
 	margin-top: 28px;
 }
-.mission, .pressMid {
-	width: 97%;
-}
+
 .mission, .pressMid {
 	padding: 0 25px 0 15px;
+	width: 97%;
+	position: fixed;
 	height: 79vh;
-	top: 75px;
+	top: 58px;
 	border: none;
 	h2 {
 		display: none;

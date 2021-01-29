@@ -11,6 +11,8 @@ $(function(){
   		$('.pressMid').addClass('openMid');
   		$('.pressMid').removeClass('closeMiddle');
   		$('.mainPageMid').removeClass('openMidMain');
+  		$('.pressMid').css('display','block');
+
   
 
 	});
@@ -23,6 +25,7 @@ $(function(){
 
 	$('.missionMore').click(function() {
 	  	$('.mainPageMid').addClass('openMidMain');
+	  	$('.mission').css('display','block');
 	  	$('.mission').removeClass('closeMiddleMission');
 	  	$('.pressMid').removeClass('openMid');
 	  
@@ -35,28 +38,30 @@ $(function(){
 
 	});
 	$('.menuClick').click(function(){
-		$('.mainPageSide').css('display','block');
+		$('.mainPageSide').css('display','block',1500);
 		$('.mainPageSide h1').css('display','none');
 		$('.mainPageSideInner').addClass('innerActivate');
 		// $('.mainPageSideInner').removeClass('innerMoveBack');
 		$(this).css('display','none');
 		// $('.mission').css('display','block');
 		$('.closeClickMenu').fadeIn(1500);
+		$('body').css('overflow','hidden');
 		// $('.mission').addClass('closeMiddleMission');
 	});
 
 	$('.closeClickMenu').click(function(){
 		// $('.mainPageSide').fadeOut(2500);
-		$('.mainPageSide').css('display','none').delay( 800 );
+		$('.mainPageSide').css('display','none');
 		$('.mainPageSide h1').css('display','block');
 		$('.mainPageSideInner').removeClass('innerActivate');
 		$('.mission').css('display','none');
-		$('.pressMid').removeClass('openMid');
-		$('.mission').addClass('closeMiddleMission');
-		$('.pressMid').addClass('closeMiddle');
+		$('.pressMid').css('display','none');
+		// $('.mission').addClass('closeMiddleMission');
+		// $('.pressMid').addClass('closeMiddle');
 		// $('.mainPageSideInner').addClass('innerMoveBack');
-		$('.menuClick').fadeIn(700);
-		$(this).fadeOut(500);
+		$('.menuClick').fadeIn(500);
+		$(this).fadeOut(100);
+		$('body').css('overflow','auto');
 
 
 	});
