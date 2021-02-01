@@ -103,7 +103,8 @@
 
 		<?php $args = array( 
 			'post_type' => 'model', 
-			'order' => 'DCS'
+			'order' => 'ASC',
+			'posts_per_page' => -1
 			 );
 		  query_posts( $args ); // hijack the main loop
 		  while ( have_posts() ) : the_post();

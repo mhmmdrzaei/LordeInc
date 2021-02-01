@@ -8,6 +8,7 @@
 */
 
 @import 'normalize';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap');
 /*
 ====================================
 Default Styling
@@ -36,7 +37,7 @@ main {
 	max-width: 1200px;
 	margin: 0 auto;
 	// min-height: 95vh;
-	padding: 15px;
+	padding: 20px;
 	
 	
 }
@@ -54,11 +55,14 @@ img {
 }
 
 body {
-	font-family: akkuratMono, sans-serif;
+	font-family: 'Noto Sans JP', sans-serif;
 	// font-family: akkuratlight, sans-serif;
 	// background-color: #FAF6EB;
 	// padding: 20px;
 	@include fontSize(7);
+}
+h1, h2, h3, h4 {
+	font-family: akkuratMono, sans-serif;
 }
 .homePage {
 	@extend .flex;
@@ -72,7 +76,8 @@ body {
 	// padding-right: 10px;
 	h1 {
 		margin: 0;
-		// padding: 15px;
+		@include fontSize(12);
+		// padding: 20px;
 		text-transform: uppercase;
 		position: fixed;
 		a {
@@ -87,12 +92,15 @@ body {
 }
 
 .castingInfo {
-	margin: 0px 0 56px;
+	margin: 0px 0 40px;
+}
+ .morePress {
+	padding: 0px 0 10px;
 }
 
 .submissionsInfo{
 	p {
-		margin: 5px 0;
+		margin: 0px 0;
 	}
 	.submissionHeader {
 	margin: 0;
@@ -104,14 +112,15 @@ body {
 	}
 }
 .moreLinks {
-	margin-top: 56px;
+	margin-top: 40px;
 	a {
 		display: block;
+		padding: 0px 0 10px;
 	}
 	button {
 		background: none;
 		border: none;
-		padding: 0;
+		padding: 0 0 10px;
 		&:hover {
 			text-decoration: underline;
 		}
@@ -119,9 +128,9 @@ body {
 }
 .mainPageSideInner {
 	position: fixed;
-	top: 80px;
+	top: 120px;
 	width: 19%;
-	padding-right: 15px;
+	padding-right: 20px;
 	// padding-top: 0;
 }
 //mid page 
@@ -138,7 +147,7 @@ body {
 	top: 0;
 	overflow-y:scroll;
 	// padding: 1%;
-	padding-top: 50px;
+	padding: 50px 20px;
 	z-index: 10000;
 	border-right: 1px solid #dadbdd;
 	border-left: 1px solid #dadbdd;
@@ -193,11 +202,12 @@ body {
 	position: fixed;
 	width: 21%;
 	left: 21%;
-	padding: 0 15px;
+	padding: 0 20px;
 	// height: 95vh;
 
 	h2 {
 		margin: 0 0 52px;
+		@include fontSize(10);
 	}
 }
 //main posts 
@@ -259,7 +269,8 @@ body {
 
 .text {
   color: white;
-  font-size: 20px;
+  text-transform: lowercase;
+  // font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -289,14 +300,19 @@ footer{
 // .modelDetails {
 // 	position: fixed;
 // }
-
+.column {
+	p {
+		margin: 0;
+	}
+}
 
 .modelPageSide {
 	width: 21%;
-	padding-right: 15px;
+	padding-right: 20px;
 	border-right: 1px solid #dadbdd;
 	.castingInfo {
 	margin: 52px 0 56px;
+
 	}
 	h1 {
 		margin: 0;
@@ -315,7 +331,7 @@ footer{
 }
 .modelDetails{
 	width: 26%;
-	padding: 3px 15px;
+	padding: 3px 20px;
 	border-right: 1px solid #dadbdd;
 	min-height: 95vh;
 	.modelHeader {
@@ -410,7 +426,7 @@ footer{
 }
 .castingPagePosts {
 	width: 78%;
-	padding-left: 15px;
+	padding-left: 20px;
 	border-left: 1px solid #dadbdd;
 
 }
@@ -480,8 +496,8 @@ footer{
 }
 .missionMore{
 	display: none;
-	margin-bottom: 20px;
-	font-weight: 900;
+	// margin-bottom: 20px;
+	// font-weight: 900;
 
 }
 .missionMoreModel{
@@ -532,7 +548,7 @@ footer{
 .moreinfoCasting {
 	position: fixed;
 	width: 21%;
-	bottom: 15px;
+	bottom: 20px;
 	margin: 0;
 }
 .castingPageSide {
@@ -576,7 +592,7 @@ footer{
 	height: 100vh;
 	z-index: 100;
 	width: 25%;
-	padding: 15px;
+	padding: 20px;
 	animation: midmove 1s normal forwards ease-in-out;
 	border: 1px solid #dadbdd;
 	border-bottom: 0;
@@ -609,7 +625,7 @@ footer{
 }
 .pressMid {
 	width: 25%;
-	padding: 30px 15px;
+	padding: 30px 20px;
 }
 @keyframes splash {
  from {left: -30%;}
@@ -631,7 +647,7 @@ footer{
 		border:none;
 		display: flex;
 		flex-flow:wrap;
-		padding: 0 15px;
+		padding: 0 20px;
 		width: 100%;
 		.modelName {
 			margin: 7px 0;
@@ -772,7 +788,7 @@ body {
 	top: 0;
 	z-index: 10001;
 	// position: absolute;
-	padding: 0 15px;
+	padding: 0 20px;
     padding-top: 32%;
     height: 100vh;
 }
@@ -805,7 +821,7 @@ body {
 }
 
 .mission, .pressMid {
-	padding: 0 25px 0 15px;
+	padding: 0 25px 0 20px;
 	width: 97%;
 	position: fixed;
 	height: 79vh;
@@ -817,19 +833,19 @@ body {
 }
 @keyframes midmove {
  from {left: -100%;}
-  to {left: 15px;}
+  to {left: 20px;}
 }
 @keyframes midmoveOut {
- from {left: 15px }
+ from {left: 20px }
   to {left: -100%;}
 }
 
 @keyframes splash {
  from {left: -100%;}
-  to {left: 15px;}
+  to {left: 20px;}
 }
 @keyframes splish {
- from {left: 15px}
+ from {left: 20px}
   to {left: -100%;}
 }
 }
