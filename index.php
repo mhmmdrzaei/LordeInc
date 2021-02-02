@@ -65,8 +65,7 @@
 		  query_posts( $argPress ); // hijack the main loop
 		  while ( have_posts() ) : the_post();
 		    ?>
-		     <?php echo $argPress->current_post;
-		    ?>
+
 		    <li>
 		    	<a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
 		    </li>

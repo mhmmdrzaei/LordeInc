@@ -80,12 +80,24 @@ $(function(){
 
 	});
 
-	$('.grid').masonry({
-	  itemSelector: '.grid-item',
-	  // use element for option
-	  columnWidth: '.grid-sizer',
-	  percentPosition: true
-	});
+	var $container = $(".grid");
+
+	   $container.imagesLoaded(function () {
+	       $container.masonry({
+	       		itemSelector: '.grid-item',
+	       		// use element for option
+	       		columnWidth: '.grid-sizer',
+	       		// percentPosition: true
+
+	       });
+	   });
+
+	// $('.grid').masonry({
+	//   itemSelector: '.grid-item',
+	//   // use element for option
+	//   columnWidth: '.grid-sizer',
+	//   percentPosition: true
+	// });
 
 
 });

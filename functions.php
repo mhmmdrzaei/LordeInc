@@ -66,6 +66,15 @@ function hackeryou_scripts() {
   	true //load in footer
   );
 
+  	wp_deregister_script('imagesloaded');
+    wp_enqueue_script(
+    	'imagesloaded',
+    	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js",
+    	false, //dependencies
+    	null, //version number
+    	true //load in footer
+    );
+
   	wp_deregister_script('masonryjs');
     wp_enqueue_script(
     	'masonaryjs',
@@ -346,5 +355,6 @@ if(is_user_logged_in()) {
 		</style>
 
 	<?php }
+// masonry 
 
 }

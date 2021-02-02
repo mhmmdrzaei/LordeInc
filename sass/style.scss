@@ -34,7 +34,7 @@ Default Styling
 	flex-flow: row wrap;
 }
 main {
-	max-width: 1200px;
+	max-width: 1300px;
 	margin: 0 auto;
 	// min-height: 95vh;
 	padding: 20px;
@@ -128,7 +128,7 @@ h1, h2, h3, h4 {
 }
 .mainPageSideInner {
 	position: fixed;
-	top: 120px;
+	top: 90px;
 	width: 19%;
 	padding-right: 20px;
 	// padding-top: 0;
@@ -219,7 +219,7 @@ h1, h2, h3, h4 {
 	display: grid;
 	align-self:end;
 	  /* Auto-fit as many items on a row as possible without going under 180px */
-	  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
 	  /* A little spacing between articles */
 	  grid-gap: 1em;
 	a {
@@ -833,19 +833,19 @@ body {
 }
 @keyframes midmove {
  from {left: -100%;}
-  to {left: 20px;}
+  to {left: 5px;}
 }
 @keyframes midmoveOut {
- from {left: 20px }
+ from {left: 5px }
   to {left: -100%;}
 }
 
 @keyframes splash {
  from {left: -100%;}
-  to {left: 20px;}
+  to {left: 5px;}
 }
 @keyframes splish {
- from {left: 20px}
+ from {left: 5px}
   to {left: -100%;}
 }
 }
