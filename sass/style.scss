@@ -28,6 +28,10 @@ Default Styling
   font-family: 'Akkurat-Normal';
   src: url('Akkurat-Normal.otf');
 }
+@font-face {
+  font-family: 'Akkurat-Mono';
+  src: url('Akkurat-Mono.otf');
+}
 
 @mixin fontSize($sizeValue){
     font-size: $sizeValue * 1px;
@@ -63,10 +67,15 @@ body {
 	// font-family: akkuratlight, sans-serif;
 	// background-color: #FAF6EB;
 	// padding: 20px;
-	@include fontSize(7);
+	@include fontSize(6.5);
+	font-weight: 700;
 }
 h1, h2, h3, h4 {
-	font-family: Akkurat-Fett, sans-serif;
+	font-family: Akkurat-Normal, sans-serif;
+	font-weight: 700;
+}
+h1, h2 {
+	@include fontSize(8.5);
 }
 .homePage {
 	@extend .flex;
@@ -80,7 +89,7 @@ h1, h2, h3, h4 {
 	// padding-right: 10px;
 	h1 {
 		margin: 0;
-		@include fontSize(12);
+		@include fontSize(9);
 		// padding: 20px;
 		text-transform: uppercase;
 		position: fixed;
@@ -100,6 +109,7 @@ h1, h2, h3, h4 {
 }
  .morePress {
 	padding: 0px 0 10px;
+	font-weight: 700;
 }
 
 .submissionsInfo{
@@ -109,7 +119,7 @@ h1, h2, h3, h4 {
 	.submissionHeader {
 	margin: 0;
 	font-family: 'Akkurat-Normal', sans-serif;
-	font-weight: 700;
+	// font-weight: 700;
 
 	}
 	.submissionsBody {
@@ -118,6 +128,7 @@ h1, h2, h3, h4 {
 	}
 }
 .moreLinks {
+	font-family: Akkurat-Mono , sans-serif;
 	margin-top: 40px;
 	a {
 		display: block;
@@ -212,8 +223,8 @@ h1, h2, h3, h4 {
 	// height: 95vh;
 
 	h2 {
-		margin: 0 0 52px;
-		@include fontSize(10);
+		margin: 0 0 45px;
+		@include fontSize(8.5);
 	}
 }
 //main posts 
@@ -223,7 +234,7 @@ h1, h2, h3, h4 {
 	// @extend .flex;
 	// justify-content: space-between;
 	display: grid;
-	align-self:end;
+	align-self:start;
 	  /* Auto-fit as many items on a row as possible without going under 180px */
 	  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
 	  /* A little spacing between articles */
@@ -505,7 +516,7 @@ footer{
 .missionMore{
 	display: none;
 	// margin-bottom: 20px;
-	// font-weight: 900;
+	font-weight: 700;
 
 }
 .missionMoreModel{
@@ -680,7 +691,7 @@ footer{
 		width: 100%;
 	}
 	.instagram {
-		margin: 6px 5px 7px;
+		margin: 7px 5px 7px;
 
 	}
 	.modelHeader {
