@@ -16,13 +16,17 @@ Default Styling
 */
 
 @font-face {
-  font-family: 'akkuratMono';
-  src: url('Akkurat-Mono.OTF');
+  font-family: 'Akkurat-Leicht';
+  src: url('Akkurat-Leicht.otf');
 }
 
 @font-face {
-  font-family: 'akkuratlight';
-  src: url('AkkurLig.OTF');
+  font-family: 'Akkurat-Fett';
+  src: url('Akkurat-Fett.otf');
+}
+@font-face {
+  font-family: 'Akkurat-Normal';
+  src: url('Akkurat-Normal.otf');
 }
 
 @mixin fontSize($sizeValue){
@@ -55,14 +59,14 @@ img {
 }
 
 body {
-	font-family: 'Noto Sans JP', sans-serif;
+	font-family: 'Akkurat-Leicht', sans-serif;
 	// font-family: akkuratlight, sans-serif;
 	// background-color: #FAF6EB;
 	// padding: 20px;
 	@include fontSize(7);
 }
 h1, h2, h3, h4 {
-	font-family: akkuratMono, sans-serif;
+	font-family: Akkurat-Fett, sans-serif;
 }
 .homePage {
 	@extend .flex;
@@ -104,7 +108,9 @@ h1, h2, h3, h4 {
 	}
 	.submissionHeader {
 	margin: 0;
-	font-weight: 900;
+	font-family: 'Akkurat-Normal', sans-serif;
+	font-weight: 700;
+
 	}
 	.submissionsBody {
 	margin: 0;
@@ -337,17 +343,19 @@ footer{
 	.modelHeader {
 		margin: 0;
 		margin-bottom: 60px;
-		text-transform: uppercase;;
+		text-transform: uppercase;
 		font-weight: 700;
 	}
 	.modelName{
-		font-weight: 900;
+		font-family: 'Akkurat-Normal', sans-serif;
+		font-weight: 700;
 		text-transform: uppercase;
 		margin: 3px 0 7px;
 	}
 	.instagram {
 		margin-bottom: 70px;
-		font-weight: 900;
+		font-family: 'Akkurat-Normal', sans-serif;
+		font-weight: 700;
 		a {
 			color: #616161;
 		}
@@ -730,6 +738,7 @@ body {
 	width: 100%;
 	margin-top: 55px;
 	.modelDetails {
+		margin-top: 15px;
 		padding: 0;
 		.modelHeader {
 		display: none;
@@ -761,7 +770,8 @@ body {
 	border: none;
 	padding: 0 0 0 1px;
 	text-transform: uppercase;
-	font-weight: 900;
+	font-family: 'Akkurat-Normal', sans-serif;
+	font-weight: 700;
 	@include fontSize(10);
 	outline: none;
 }
