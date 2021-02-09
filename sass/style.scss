@@ -176,6 +176,7 @@ h1, h2 {
 	height: 100vh;
 	ul {
 		margin: 0;
+		padding: 0;
 		padding-left: 10px;
 		list-style: none;
 		li {
@@ -185,10 +186,9 @@ h1, h2 {
 	}
 	.closeMid {
 		text-align: right;
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 		cursor: pointer;
 		// @include fontSize(8);
-		margin-right: 10px;
 	}
 
 }
@@ -199,7 +199,10 @@ h1, h2 {
 	border-right: 1px solid #dadbdd;
 
 	position: absolute;
-	height: 94vh;
+	height: 94vh; 
+	ul {
+		padding: 0;
+	}
 }
 .pressModelMid {
 	width: 21%;
@@ -241,7 +244,7 @@ h1, h2 {
 }
 .missionInner{
 	position: absolute;
-    top: 20px;
+    // top: 20px;
     height: 95vh;
     padding: 0 20px; 
 
@@ -249,7 +252,11 @@ h1, h2 {
 .modelMissionInner {
 	border-left: 1px solid #dadbdd;
 	border-right: 1px solid #dadbdd;
+	top: 20px;
 
+}
+.mMissionInner {
+	top: 20px;
 }
 //main posts 
 .mainPagePosts {
@@ -566,7 +573,7 @@ footer{
 	 	margin:0px 0 23px;
 	 }
 	 .missionInner {
-	 	border-left: 1px solid #dadbdd;
+	 	// border-left: 1px solid #dadbdd;
 	 }
 
 }
@@ -615,8 +622,10 @@ footer{
 .missionInner{
     border-left: 1px solid #dadbdd;
     border-right: 1px solid #dadbdd;
+    top: 20px;
 
 }
+
 .mainPageMid {
 	display: none;
 	border: none;
@@ -934,6 +943,9 @@ body {
 .pressMidInner {
 	border: none;
 	padding: 0;
+}
+.closeMid {
+	margin-right: 10px;
 }
 }
 

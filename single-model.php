@@ -54,7 +54,7 @@
     </section>
   </section>
     <section class="mission modelMissionMid" style="background: <?php the_field('background_color', 'option'); ?>">
-      <section class="missionInner">
+      <section class="missionInner mMissionInner">
 
       <?php 
         $post   = get_post( 48 );
