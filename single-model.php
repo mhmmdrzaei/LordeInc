@@ -9,7 +9,7 @@
       <button class="menuClick">Menu</button>
       <button class="closeClickMenu">x</button>
   </section>
-  <section class="mainPageSide">
+  <section class="mainPageSide modelMainPageSide">
     <h1>
         <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
           <?php bloginfo( 'name' ); ?>
@@ -48,7 +48,7 @@
 
       </section>
       <button class="morePress">Press</button>
-      <a href="#" target="_blank">Journal</a>
+      <a href="<?php the_field('journal_link','option') ?>" target="_blank">Journal</a>
       <a href="https://www.instagram.com/lordeinc/" target="_blank">Instagram</a>
     </section>
     </section>

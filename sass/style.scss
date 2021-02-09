@@ -52,6 +52,7 @@ main {
 a {
 	color: black;
 	text-decoration: none;
+	outline: none;
 	&:hover {
 		text-decoration: underline;
 	}
@@ -69,6 +70,8 @@ body {
 	// padding: 20px;
 	@include fontSize(6.5);
 	font-weight: 700;
+	max-width: 1300px;
+	margin: 0 auto;
 }
 h1, h2, h3, h4 {
 	font-family: Akkurat-Normal, sans-serif;
@@ -76,6 +79,9 @@ h1, h2, h3, h4 {
 }
 h1, h2 {
 	@include fontSize(8.5);
+}
+button {
+	 outline:none;
 }
 .homePage {
 	@extend .flex;
@@ -139,6 +145,7 @@ h1, h2 {
 		background: none;
 		border: none;
 		padding: 0 0 10px;
+		outline:none;
 		&:hover {
 			text-decoration: underline;
 		}
@@ -162,10 +169,10 @@ h1, h2 {
 .pressMid {
 	display: none;
 	position: fixed;
-	width: 23.5%;
+	width: 22%;
 	top: 0;
-	overflow-y:scroll;
-	padding: 50px 20px;
+	// overflow-y:scroll;
+	// padding: 50px 20px;
 	// padding: 1%;
 	z-index: 10000;
 	// border-right: 1px solid #dadbdd;
@@ -195,8 +202,9 @@ h1, h2 {
 .pressMidInner {
 	padding: 30px 20px 0;
 	top: 20px;
+	width: 100%;
 	border-left: 1px solid #dadbdd;
-	border-right: 1px solid #dadbdd;
+	// border-right: 1px solid #dadbdd;
 
 	position: absolute;
 	height: 94vh; 
@@ -205,7 +213,7 @@ h1, h2 {
 	}
 }
 .pressModelMid {
-	width: 21%;
+	width: 20%;
 }
 .openMid {
 	display: block;
@@ -219,7 +227,7 @@ h1, h2 {
 }
 @keyframes splash {
  from {left: -25%;}
-  to {left: 20%;}
+  to {left: 20.5%;}
 }
 .closeMiddle {
 	display: block;
@@ -227,12 +235,12 @@ h1, h2 {
 
 }
 @keyframes splish {
- from {left: 20%;}
+ from {left: 20.5%;}
   to {left: -25%;}
 }
 .mission {
 	position: fixed;
-	width: 21.5%;
+	width: 20.5%;
 	left: 21%;
 	// padding: 0 20px;
 	// height: 95vh;
@@ -257,6 +265,8 @@ h1, h2 {
 }
 .mMissionInner {
 	top: 20px;
+	border-left: 1px solid #dadbdd;
+	padding-left: 22px;
 }
 //main posts 
 .mainPagePosts {
@@ -405,13 +415,16 @@ footer{
 }
 .mainmodelImgs {
 	width: 72%;
+	margin: 0 auto;
 }
+
 #nav-below {
 	@extend .flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	@include fontSize(6);
 	text-align: center;
-	width: 19%;
+	width: 15%;
+	max-width: 260px;
 	text-transform: uppercase;
 	position: fixed;
 	bottom: 0;
@@ -427,10 +440,13 @@ footer{
 
 .bx-wrapper img {
     margin: 0 auto;
-   
+   	max-width: 650px !important;
     max-height: 80vh !important;
 }
 
+.bx-wrapper .bx-prev {
+	left: -5px !important;
+}
 .bx-wrapper{
 	padding: 5px;
 	background: transparent !important;
@@ -559,7 +575,7 @@ footer{
 }
 .modelMissionMid {
 	display: none;
-	left: 20.5%;
+	// left: 20%;
 	top: 0;
 	z-index: 100;
 	height: 100vh;
@@ -589,7 +605,7 @@ footer{
 	animation: midmoveOut 1s normal forwards ease-in-out;
 }
 @keyframes midmoveOut {
- from {left: 20%;}
+ from {left: 20.5%;}
   to {left: -27%;}
 }
 .openMidMain {
@@ -600,11 +616,12 @@ footer{
 }
 @keyframes midmove {
  from {left: -21%;}
-  to {left: 21%;}
+  to {left: 20.5%;}
 }
 .moreinfoCasting {
 	position: fixed;
 	width: 21%;
+	max-width: 180px;
 	bottom: 20px;
 	margin: 0;
 }
@@ -674,7 +691,7 @@ footer{
 }
 .closeMission {
 	text-align: right;
-	margin-right: 5px;
+	// margin-right: 5px;
 	cursor: pointer;
 
 }
@@ -686,8 +703,8 @@ footer{
   to {left: -27%;}
 }
 .pressMid {
-	width: 25%;
-	padding: 30px 20px;
+	width: 27%;
+	// padding: 30px 20px;
 }
 @keyframes splash {
  from {left: -30%;}
@@ -698,8 +715,9 @@ footer{
   to {left: -30%;}
 }
 .modelPageMid {
-	width: 68%;
+
 	display: block;
+	width: 71%;
 	.mainmodelImgs {
 		width: 100%;
 	}
@@ -709,7 +727,7 @@ footer{
 		border:none;
 		display: flex;
 		flex-flow:wrap;
-		padding: 0 20px;
+		padding: 0;
 		width: 100%;
 		.modelName {
 			margin: 7px 0;
@@ -935,6 +953,7 @@ body {
 .missionInner {
 	padding: 0;
 	border: 0;
+	position: relative;
 	.closeMission {
 		margin-right: 5%;
 		// @include fontSize(8);
@@ -943,12 +962,41 @@ body {
 .pressMidInner {
 	border: none;
 	padding: 0;
+	position: relative;
 }
 .closeMid {
-	margin-right: 10px;
+	// margin-right: 10px;
 }
 }
 
+@media(min-width: 1350px){ 
+.mission {
+	width: 20%;
+	left: 23.5%;
+}
+.mainPagePosts {
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+@keyframes midmoveOut {
+ from {left: 21.5%;}
+  to {left: -27%;}
+}
+
+@keyframes midmove {
+ from {left: -21%;}
+  to {left: 21.5%;}
+}
+@keyframes splash {
+ from {left: -25%;}
+  to {left: 21.5%;}
+}
+
+@keyframes splish {
+ from {left: 21.5%;}
+  to {left: -25%;}
+}
+
+}
 
 
 

@@ -50,7 +50,7 @@
 
 	    </section>
 	    <button class="morePress">Press</button>
-	    <a href="#" target="_blank">Journal</a>
+	    <a href="<?php the_field('journal_link','option') ?>" target="_blank">Journal</a>
 	    <a href="https://www.instagram.com/lordeinc/" target="_blank">Instagram</a>
 	  </section>
 	  	<p class="moreinfoCasting">

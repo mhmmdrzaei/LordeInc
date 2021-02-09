@@ -28,12 +28,15 @@ $(function(){
 	  	$('.mission').css('display','block');
 	  	$('.mission').removeClass('closeMiddleMission');
 	  	$('.pressMid').removeClass('openMid');
+	  	// $('.mainPageSide').css('border','none');
 	  
 
 	});
 	$('.closeMission').click(function() {
 	  	$('.mission').removeClass('openMidMain');
 	  	$('.mission').addClass('closeMiddleMission');
+	  	// $('.mainPageSide').css('border-right','1px solid #dadbdd');
+	  	// $('castingPageSide').css('border-right','0');
 	  
 
 	});
@@ -71,7 +74,7 @@ $(function(){
 
 
 	$('.bxslider').bxSlider({
-		oneToOneTouch: true,
+		// oneToOneTouch: true,
 		controls: true,
 		pagerType: 'short',
 		prevText: '←',
