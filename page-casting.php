@@ -61,6 +61,9 @@
 	  </section>
 	</section>
 	  <section class="mission modelMissionMid" style="background: <?php the_field('background_color', 'option'); ?>">
+	  	<section class="missionInner modelMissionInner">
+	  		
+
 
 	    <?php 
 	      $post   = get_post( 48 );
@@ -74,9 +77,11 @@
 	      echo $output;
 
 	     ?>
+	     </section>
 
 	  </section>
 	<section class="pressMid pressModelMid" style="background: <?php the_field('background_color', 'option'); ?>">
+	<section class="pressMidInner">
 	  <div class="closeMid">← CLOSE</div>
 	  <ul >
 	  <?php $argPress = array( 
@@ -85,8 +90,6 @@
 	     );
 	    query_posts( $argPress ); // hijack the main loop
 	    while ( have_posts() ) : the_post();
-	      ?>
-	       <?php echo $argPress->current_post;
 	      ?>
 	      <li>
 	        <a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
@@ -99,7 +102,7 @@
 	    <?php
 	    wp_reset_query();
 	    ?> 
-	    
+	 </section>   
 	</section>
 	<section class="castingPagePosts">
 		<div class="grid">

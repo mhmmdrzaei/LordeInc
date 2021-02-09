@@ -56,31 +56,35 @@
 		</section>
 	</section>
 	<section class="pressMid" style="background: <?php the_field('background_color', 'option'); ?>">
-		<div class="closeMid">← CLOSE</div>
-		<ul >
-		<?php $argPress = array( 
-			'post_type' => 'press',
-			'posts_per_page' => -1
-			 );
-		  query_posts( $argPress ); // hijack the main loop
-		  while ( have_posts() ) : the_post();
-		    ?>
+		<section class="pressMidInner">
+			<div class="closeMid">← CLOSE</div>
+			<ul >
+			<?php $argPress = array( 
+				'post_type' => 'press',
+				'posts_per_page' => -1
+				 );
+			  query_posts( $argPress ); // hijack the main loop
+			  while ( have_posts() ) : the_post();
+			    ?>
 
-		    <li>
-		    	<a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
-		    </li>
-			 
-		   <?php
-		  endwhile;
-		  ?>
-		  </ul>
-		  <?php
-		  wp_reset_query();
-		  ?> 
+			    <li>
+			    	<a  class="updateTitle" href="<?php the_field('press_url'); ?>" target="_blank"><?php the_title(); ?></a>
+			    </li>
+				 
+			   <?php
+			  endwhile;
+			  ?>
+			  </ul>
+			  <?php
+			  wp_reset_query();
+			  ?> 	
+		</section>
+
 		  
 	</section>
 	<section class="mainPageMid">
 		<section class="mission" style="background: <?php the_field('background_color', 'option'); ?>">
+			<section class="missionInner">
 
 			<?php 
 				$post   = get_post( 48 );
@@ -94,7 +98,7 @@
 				echo $output;
 
 			 ?>
-
+			</section>
 		</section>
 		
 	</section>
