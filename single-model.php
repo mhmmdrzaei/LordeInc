@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="homePage">
+<main class="homePage modelMain">
   <section class="MobileMenu">
     <h1>
         <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
