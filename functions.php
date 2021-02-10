@@ -78,7 +78,7 @@ function hackeryou_scripts() {
   	wp_deregister_script('masonryjs');
     wp_enqueue_script(
     	'masonaryjs',
-    	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://masonry.desandro.com/masonry.pkgd.js",
+    	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js",
     	false, //dependencies
     	null, //version number
     	true //load in footer
