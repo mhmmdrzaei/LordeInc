@@ -80,6 +80,13 @@ $(function(){
 		prevText: '←',
 		nextText:'→',
 		adaptiveHeight: true,
+		// onSlideAfter: function (currentSlideNumber, totalSlideQty, currentSlideHtmlObject) {
+		//     $('.active-slide').removeClass('active-slide');
+		//     $('.bxslider>li').eq(currentSlideHtmlObject + 1).addClass('active-slide')
+		// },
+		// onSliderLoad: function () {
+		//     $('.bxslider>li').eq(1).addClass('active-slide')
+		// },
 
 	});
 
@@ -95,12 +102,48 @@ $(function(){
 	       });
 	   });
 
-	// $('.grid').masonry({
-	//   itemSelector: '.grid-item',
-	//   // use element for option
-	//   columnWidth: '.grid-sizer',
-	//   percentPosition: true
-	// });
+	$('.vid').each(function(i) {
+	  //This is the regular vanilla 'this'.(optional/required for next function)
+	  var self = this;
+	  var lis = $(self).parent();
+	  console.log(lis);
+	  // var btnPlayPause = document.getElementById('btnPlayPause');
+	  // $('#btnPlayPause').on('click', function() {
+	  // 	console.log('plz');
+	  //   (self.paused) ? self.play(): self.pause();
+	  // });
 
+	  // if (($(self).attr("autoplay")) & ($(lis).hasClass('active-slide'))) {
+	  // 	$(self).pause();
+	  // }
+	  // // console.log(lis);
+
+	  // $('.bx-next').on('click', function{
+	  // 	// if ($(lis).attr("aria-hidden","false")) {
+	  // 	// 	console.log('fuck');
+	  // 	// };
+	  // });
+	  // if ($(lis).hasClass('active-slide')){
+	  // 	console.log('comeonnnn');
+	  // 	$(self)[0].autoplay = true;
+	  // };
+	  // $('.bx-next').click(function(){
+
+
+
+	  // });
+	  //Click on the video element to play or pause.(optional)
+	  $(this).on('click', function() {
+	  	$('.play').toggleClass('playing');
+	    (self.paused) ? self.play(): self.pause();
+	  });
+	  //When this video ends, go to next slide
+	  $(this).on('ended', function() {
+	    bx.goToNextSlide();
+	  });
+	});
+	
 
 });
+
+

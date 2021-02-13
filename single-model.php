@@ -146,19 +146,29 @@
 
     </section>
     <section class="mainmodelImgs">
-
+    <ul class="bxslider">
     <?php 
-    $images = get_field('gallery');
-    $size = 'full'; // (thumbnail, medium, large, full or custom size)
-    if( $images ): ?>
+      $images = get_field('gallery');
+      foreach( $images as $image ):
+      $data_type = pathinfo($image['url'], PATHINFO_EXTENSION);
+      if ($data_type == 'mp4') {?>
+        <li>
+        <video class="vid">
+          <source src="<?php echo $image['url'];?>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>  
+        <button id='btnPlayPause' class='play' title='play' accesskey="P"></button>
 
-      <ul class="bxslider">
-        <?php foreach( $images as $image ): ?>
-          <li><img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <?php endforeach; ?></li>
-      </ul>
+      </li>
+      <?php } else { ?>
+        <li>
+      <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /> 
+    </li>
+    <?php
+      } endforeach; 
+    ?>
+  </ul>
 
-    <?php endif; ?>
     
   </section>
 </section>

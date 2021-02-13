@@ -446,6 +446,32 @@ footer{
    	// max-width: 650px !important;
     max-height: 80vh !important;
 }
+video {
+  // display: block;
+  margin: 0px auto;
+  cursor: pointer;
+  min-height: 250px;
+  width: 100%;
+
+}
+button.play {
+	height: 0px;
+	position: relative;
+	top:-3em;
+	background: transparent;
+	border: none;
+}
+.play:after {
+	content: "▶";
+	@include fontSize(15);
+
+
+}
+.playing:after {
+	content:"| |";
+	font-weight: 900;
+    @include fontSize(12);
+}
 
 .bx-wrapper .bx-prev {
 	left: -5px !important;
@@ -720,7 +746,7 @@ footer{
 .modelPageMid {
 
 	display: block;
-	width: 71%;
+	width: 68%;
 	.mainmodelImgs {
 		width: 100%;
 	}
@@ -834,7 +860,7 @@ body {
 }
 .modelPageMid {
 	width: 100%;
-	margin-top: 55px;
+	margin-top: 0px;
 	.modelDetails {
 		margin-top: 15px;
 		padding: 0;
@@ -861,6 +887,11 @@ body {
 			text-decoration: none;
 
 		}
+	}
+}
+.modelMain {
+	.MobileMenu {
+		position: inherit;
 	}
 }
 .menuClick {
@@ -1009,6 +1040,12 @@ body {
 
 
 }
+@media(max-width: 460px){
+button.play {
+	top:-6em;
+}	
+ }
+
 
 
 
