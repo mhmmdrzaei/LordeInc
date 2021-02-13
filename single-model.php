@@ -153,11 +153,11 @@
       $data_type = pathinfo($image['url'], PATHINFO_EXTENSION);
       if ($data_type == 'mp4') {?>
         <li>
-        <video class="vid">
+        <video class="vid" muted controls controlsList="nodownload nofullscreen noremoteplayback">
           <source src="<?php echo $image['url'];?>" type="video/mp4">
           Your browser does not support the video tag.
         </video>  
-        <button id='btnPlayPause' class='play' title='play' accesskey="P"></button>
+        <!-- <button id='btnPlayPause' class='play' title='play' accesskey="P"></button> -->
 
       </li>
       <?php } else { ?>
