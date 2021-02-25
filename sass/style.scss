@@ -94,7 +94,7 @@ button {
 	width: 20%;
 	
 	z-index: 10;
-	height: 95vh;
+	// height: 95vh;
 	border-right: 1px solid #dadbdd;
 	// padding-right: 10px;
 	h1 {
@@ -715,6 +715,10 @@ button.play {
 }
 .mainPageSide {
 	width: 27%;
+	
+}
+.modelMainPageSide {
+	height: 95vh;
 }
 .mainPagePosts {
 	width: 70%;
