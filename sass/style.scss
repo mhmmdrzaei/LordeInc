@@ -533,6 +533,12 @@ button.play {
   margin: 0 auto;
   // max-width: 800px;
 }
+.grid.are-images-unloaded {
+  opacity: 0;
+}
+.grid.are-images-unloaded .image-grid-item {
+  opacity: 0;
+}
 
 .grid-item {
   height: auto;

@@ -90,17 +90,65 @@ $(function(){
 
 	});
 
-	var $container = $(".grid");
+	// var $container = $(".grid");
 
-	   $container.imagesLoaded(function () {
-	       $container.masonry({
-	       		itemSelector: '.grid-item',
-	       		// use element for option
-	       		columnWidth: '.grid-sizer',
-	       		// percentPosition: true
+	//    $container.imagesLoaded(function () {
+	//        $container.masonry({
+	//        		itemSelector: '.grid-item',
+	//        		// use element for option
+	//        		columnWidth: '.grid-sizer',
+	//        		// percentPosition: true
 
-	       });
-	   });
+	//        });
+	//    });
+	var $grid = $('.grid').masonry({
+	  itemSelector: 'none', // select none at first
+	  columnWidth: '.grid-sizer',
+	  // gutter: '.grid__gutter-sizer',
+	  percentPosition: true,
+	  stagger: 800,
+	  // nicer reveal transition
+	  visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+	  hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+	});
+
+	// get Masonry instance
+	var msnry = $grid.data('masonry');
+
+	// initial items reveal
+	$grid.imagesLoaded( function() {
+	  $grid.removeClass('are-images-unloaded');
+	  $grid.masonry( 'option', { itemSelector: '.grid-item' });
+	  var $items = $grid.find('.grid-item');
+	  $grid.masonry( 'appended', $items );
+	});
+
+	$grid.infiniteScroll({
+	  path: getPenPath,
+	  append: '.grid-item',
+	  outlayer: msnry,
+	  status: '.page-load-status',
+	});
+
+	// // with Masonry & jQuery
+	// // init Masonry
+	// let $grid = $('.grid').masonry({
+	//   // Masonry options...
+	//   itemSelector: '.grid-item',
+	//   // use element for option
+	//   columnWidth: '.grid-sizer',
+	// });
+
+	// get Masonry instance
+	// let msnry = $container.data('masonry');
+
+	// // init Infinite Scroll
+	// $container.infiniteScroll({
+	//   // Infinite Scroll options...
+	//   append: '.grid-item',
+	//   outlayer: msnry,
+	//   elementScroll: true
+	// });
 
 	$('.vid').each(function(i) {
 	  //This is the regular vanilla 'this'.(optional/required for next function)

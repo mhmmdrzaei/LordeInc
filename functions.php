@@ -60,7 +60,7 @@ function hackeryou_scripts() {
 	wp_deregister_script('jquery');
   wp_enqueue_script(
   	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://code.jquery.com/jquery-latest.min.js",
+  	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://code.jquery.com/jquery-latest.min.js",
   	false, //dependencies
   	null, //version number
   	true //load in footer
@@ -69,7 +69,7 @@ function hackeryou_scripts() {
   	wp_deregister_script('imagesloaded');
     wp_enqueue_script(
     	'imagesloaded',
-    	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js",
+    	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js",
     	false, //dependencies
     	null, //version number
     	true //load in footer
@@ -78,15 +78,24 @@ function hackeryou_scripts() {
   	wp_deregister_script('masonryjs');
     wp_enqueue_script(
     	'masonaryjs',
-    	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js",
+    	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js",
     	false, //dependencies
     	null, //version number
     	true //load in footer
     );
+    wp_deregister_script('infinite-scroll');
+    wp_enqueue_script(
+      	'masonaryjs',
+      	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js
+",
+      	false, //dependencies
+      	null, //version number
+      	true //load in footer
+     );
   	wp_deregister_script('bxsliderjs');
     wp_enqueue_script(
     	'bxslidejs',
-    	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js",
+    	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js",
     	false, //dependencies
     	null, //version number
     	true //load in footer
@@ -287,22 +296,22 @@ function pre_r($obj) {
 	echo "</pre>";
 }
 
-/* is_blog() - checks various conditionals to figure out if you are currently within a blog page */
-function is_blog () {
-	global  $post;
-	$posttype = get_post_type($post );
-	return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( $posttype == 'post')  ) ? true : false ;
-}
+// /* is_blog() - checks various conditionals to figure out if you are currently within a blog page */
+// function is_blog () {
+// 	global  $post;
+// 	$posttype = get_post_type($post );
+// 	return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( $posttype == 'post')  ) ? true : false ;
+// }
 
-/* get_post_parent() - Returns the current posts parent, if current post if top level, returns itself */
-function get_post_parent($post) {
-	if ($post->post_parent) {
-		return $post->post_parent;
-	}
-	else {
-		return $post->ID;
-	}
-}
+// /* get_post_parent() - Returns the current posts parent, if current post if top level, returns itself */
+// function get_post_parent($post) {
+// 	if ($post->post_parent) {
+// 		return $post->post_parent;
+// 	}
+// 	else {
+// 		return $post->ID;
+// 	}
+// }
 
 //theme options
 

@@ -105,6 +105,7 @@
 	 </section>   
 	</section>
 	<section class="castingPagePosts">
+		
 		<div class="grid">
 		<div class="grid-sizer"></div>
 		<?php // Start the loop ?>
