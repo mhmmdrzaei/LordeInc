@@ -556,7 +556,7 @@ button.play {
 	width: 50%;
 }
 .grid-item--width3 {
-	width: 75;
+	width: 75%;
 }
 
 
@@ -1020,6 +1020,18 @@ body {
 	// margin-right: 10px;
 }
 
+.grid-item {
+  width: 100%;
+}
+.grid-item--width1 {
+	width: 100%;
+}
+.grid-item--width2 {
+	width: 100%;
+}
+.grid-item--width3 {
+	width: 100%;
+}
 }
 
 @media(min-width: 1350px){ 
