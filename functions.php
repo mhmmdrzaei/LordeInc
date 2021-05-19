@@ -83,9 +83,9 @@ function hackeryou_scripts() {
     	null, //version number
     	true //load in footer
     );
-    wp_deregister_script('infinite-scroll');
+    wp_deregister_script('infinitescroll');
     wp_enqueue_script(
-      	'masonaryjs',
+      	'infinitescroll',
       	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js
 ",
       	false, //dependencies

@@ -101,6 +101,7 @@ $(function(){
 
 	//        });
 	//    });
+	setTimeout(function() {
 	var $grid = $('.grid').masonry({
 	  itemSelector: 'none', // select none at first
 	  columnWidth: '.grid-sizer',
@@ -111,6 +112,12 @@ $(function(){
 	  visibleStyle: { transform: 'translateY(0)', opacity: 1 },
 	  hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
 	});
+	$grid.addClass('is-visible-items');
+	  $grid.masonry( 'option', {
+	    itemSelector: '.grid-item'
+	  });
+	  // var $items = $grid.find('.grid-item');
+	  // $grid.masonry( 'appended', $items );
 
 	// get Masonry instance
 	var msnry = $grid.data('masonry');
@@ -122,13 +129,46 @@ $(function(){
 	  var $items = $grid.find('.grid-item');
 	  $grid.masonry( 'appended', $items );
 	});
+	}, 2000);
 
-	$grid.infiniteScroll({
-	  path: getPenPath,
-	  append: '.grid-item',
-	  outlayer: msnry,
-	  status: '.page-load-status',
-	});
+
+	// setTimeout(function() {
+	//   var $grid = $('.grid').masonry({
+	//     // hack, select no items
+	//     itemSelector: 'none',
+	//     columnWidth: '.grid-sizer',
+	//     percentPosition: true,
+	//     stagger: 800,
+	//     // gutter: 10,
+	//    visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+	//   hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+	//   });
+	//   $grid.addClass('is-visible-items');
+	//   // reset itemSelector
+	//   $grid.masonry( 'option', {
+	//     itemSelector: '.grid-item',
+	//   });
+	//   var $items = $grid.find('.grid-item');
+	//   $grid.masonry( 'appended', $items );
+
+	//   // // get Masonry instance
+	//   // var msnry = $grid.data('masonry');
+
+	//   // initial items reveal
+	//   $grid.imagesLoaded( function() {
+	//     $grid.removeClass('are-images-unloaded');
+	//     $grid.masonry( 'option', { itemSelector: '.grid-item' });
+	//     var $items = $grid.find('.grid-item');
+	//     $grid.masonry( 'appended', $items );
+	//   });
+	// }, 800);
+
+	// $grid.infiniteScroll({
+	//   path: '.grid',
+	//   append: '.grid-item',
+	//   outlayer: msnry,
+	//   status: '.page-load-status',
+	// });
 
 	// // with Masonry & jQuery
 	// // init Masonry
@@ -189,6 +229,11 @@ $(function(){
 	  $(this).on('ended', function() {
 	    bx.goToNextSlide();
 	  });
+	});
+
+	$( ".castingPagePosts" ).on( "load", function() {
+		console.log('fart');
+	  // Handler for .load() called.
 	});
 	
 

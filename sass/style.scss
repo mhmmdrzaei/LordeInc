@@ -8,7 +8,7 @@
 */
 
 @import 'normalize';
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap');
 /*
 ====================================
 Default Styling
@@ -17,20 +17,20 @@ Default Styling
 
 @font-face {
   font-family: 'Akkurat-Leicht';
-  src: url('Akkurat-Leicht.otf');
+  src: url('fonts/Akkurat-Leicht.otf');
 }
 
-@font-face {
-  font-family: 'Akkurat-Fett';
-  src: url('Akkurat-Fett.otf');
-}
+// @font-face {
+//   font-family: 'Akkurat-Fett';
+//   src: url('Akkurat-Fett.otf');
+// }
 @font-face {
   font-family: 'Akkurat-Normal';
-  src: url('Akkurat-Normal.otf');
+  src: url('fonts/Akkurat-Normal.otf');
 }
 @font-face {
   font-family: 'Akkurat-Mono';
-  src: url('Akkurat-Mono.otf');
+  src: url('fonts/Akkurat-Mono.otf');
 }
 
 @mixin fontSize($sizeValue){
@@ -77,7 +77,7 @@ body {
 	margin: 0 auto;
 }
 h1, h2, h3, h4 {
-	font-family: Akkurat-Normal, sans-serif;
+	font-family: 'Akkurat-Normal', sans-serif;
 	font-weight: 700;
 }
 h1, h2 {
@@ -138,7 +138,7 @@ button {
 	}
 }
 .moreLinks {
-	font-family: Akkurat-Mono , sans-serif;
+	font-family: 'Akkurat-Mono' , sans-serif;
 	margin-top: 40px;
 	a {
 		display: block;
@@ -531,7 +531,11 @@ button.play {
 .grid {
   width: 100%;
   margin: 0 auto;
+  visibility: hidden;
   // max-width: 800px;
+}
+.is-visible-items {
+	visibility: visible;
 }
 .grid.are-images-unloaded {
   opacity: 0;
