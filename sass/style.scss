@@ -18,6 +18,8 @@ Default Styling
 @font-face {
   font-family: 'Akkurat-Leicht';
   src: url('fonts/Akkurat-Leicht.otf');
+  font-weight: normal;
+      font-style: normal; 
 }
 
 // @font-face {
@@ -27,10 +29,14 @@ Default Styling
 @font-face {
   font-family: 'Akkurat-Normal';
   src: url('fonts/Akkurat-Normal.otf');
+  font-weight: normal;
+      font-style: normal; 
 }
 @font-face {
   font-family: 'Akkurat-Mono';
   src: url('fonts/Akkurat-Mono.otf');
+  font-weight: normal;
+      font-style: normal; 
 }
 
 @mixin fontSize($sizeValue){
@@ -52,6 +58,13 @@ main {
 .modelMain {
 	padding-right: 0;
 }
+// body.single-model {
+// 	footer {
+// 		position: fixed;
+// 		bottom: 0;
+// 		right: 0;
+// 	}
+// }
 a {
 	color: black;
 	text-decoration: none;
@@ -73,12 +86,14 @@ body {
 	// padding: 20px;
 	@include fontSize(6.5);
 	font-weight: 700;
+    font-style: normal; 
 	max-width: 1300px;
 	margin: 0 auto;
 }
 h1, h2, h3, h4 {
 	font-family: 'Akkurat-Normal', sans-serif;
 	font-weight: 700;
+    font-style: normal; 
 }
 h1, h2 {
 	@include fontSize(8.5);
@@ -119,7 +134,9 @@ button {
 }
  .morePress {
 	padding: 0px 0 10px;
-	font-weight: 700;
+	// font-weight: 700;
+	font-style: normal; 
+
 }
 
 .submissionsInfo{
@@ -129,6 +146,8 @@ button {
 	.submissionHeader {
 	margin: 0;
 	font-family: 'Akkurat-Normal', sans-serif;
+	font-weight: normal;
+    font-style: normal; 
 	// font-weight: 700;
 
 	}
@@ -139,6 +158,8 @@ button {
 }
 .moreLinks {
 	font-family: 'Akkurat-Mono' , sans-serif;
+	font-weight: normal;
+    font-style: normal; 
 	margin-top: 40px;
 	a {
 		display: block;
@@ -349,8 +370,9 @@ button {
 //footer
 footer{
 	position: fixed;
-	bottom: 0px;
-	right: 18px;
+	bottom: 0;
+	right: 10px;
+	// margin-right: 20px;
 	@include fontSize(6);
 }
 
@@ -394,15 +416,22 @@ footer{
 	width: 26%;
 	padding: 3px 20px;
 	border-right: 1px solid #dadbdd;
-	min-height: 95vh;
+	// min-height: 95vh;
+	.modelDetailsInner {
+		position: relative;
+		height: 93vh;
+
+	}
 	.modelHeader {
 		margin: 0;
 		margin-bottom: 60px;
 		text-transform: uppercase;
 		font-weight: 700;
+		font-style: normal; 
 	}
 	.modelName{
 		font-family: 'Akkurat-Normal', sans-serif;
+		    font-style: normal; 
 		font-weight: 700;
 		text-transform: uppercase;
 		margin: 3px 0 7px;
@@ -411,6 +440,7 @@ footer{
 		margin-bottom: 70px;
 		font-family: 'Akkurat-Normal', sans-serif;
 		font-weight: 700;
+    	font-style: normal; 
 		a {
 			color: #616161;
 		}
@@ -426,11 +456,11 @@ footer{
 	justify-content: space-between;
 	@include fontSize(6);
 	text-align: center;
-	width: 15%;
+	width: 100%;
 	max-width: 260px;
 	text-transform: uppercase;
-	position: fixed;
-	bottom: 0;
+	position: absolute;
+	bottom: -10px;
 
 }
 .measurements {
@@ -483,7 +513,7 @@ button.play {
 	border: none !important;
 	box-shadow: none !important;
 	width: 100%;
-	margin: 30px auto !important;
+	margin: 30px auto 0 !important;
 	// padding-bottom: 20px !important;
 }
 .bx-prev {
@@ -603,7 +633,8 @@ button.play {
 .missionMore{
 	display: none;
 	// margin-bottom: 20px;
-	font-weight: 700;
+	// font-weight: 700;
+	font-style: normal; 
 
 }
 .missionMoreModel{
@@ -758,6 +789,7 @@ button.play {
  from {left: 27%;}
   to {left: -30%;}
 }
+
 .modelPageMid {
 
 	display: block;
@@ -773,6 +805,9 @@ button.play {
 		flex-flow:wrap;
 		padding: 0;
 		width: 100%;
+		.modelDetailsInner {
+			height: auto;
+		}
 		.modelName {
 			margin: 7px 0;
 		}
@@ -904,6 +939,9 @@ body {
 		}
 	}
 }
+// body.single-model footer {
+// 	position: inherit;
+// }
 .modelMain {
 	.MobileMenu {
 		position: inherit;
@@ -916,6 +954,7 @@ body {
 	text-transform: uppercase;
 	font-family: 'Akkurat-Normal', sans-serif;
 	font-weight: 700;
+    font-style: normal; 
 	@include fontSize(10);
 	outline: none;
 }

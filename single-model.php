@@ -98,6 +98,7 @@
   </section>
   <section class="modelPageMid">
     <section class="modelDetails">
+      <section class="modelDetailsInner">
       <h2 class="modelHeader">
         Model
       </h2>
@@ -143,6 +144,7 @@
          <p class="nav-previous"><?php previous_post_link('%link', '&#8592; Previous'); ?></p>
          <p class="nav-next"><?php next_post_link('%link', 'Next &#8594;'); ?></p>
        </div>
+      </section>
 
     </section>
     <section class="mainmodelImgs">
@@ -168,11 +170,10 @@
       } endforeach; 
     ?>
   </ul>
-
     
   </section>
 </section>
 </main>
-
  <?php get_footer(); ?>
+
 
