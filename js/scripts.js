@@ -49,6 +49,7 @@ $(function(){
 		// $('.mission').css('display','block');
 		$('.closeClickMenu').fadeIn(1500);
 		$('body').css('overflow','hidden');
+		$('footer').toggleClass('displaynone');
 		// $('.mission').addClass('closeMiddleMission');
 	});
 
@@ -59,6 +60,7 @@ $(function(){
 		$('.mainPageSideInner').removeClass('innerActivate');
 		$('.mission').css('display','none');
 		$('.pressMid').css('display','none');
+		$('footer').toggleClass('displaynone');
 		// $('.mission').addClass('closeMiddleMission');
 		// $('.pressMid').addClass('closeMiddle');
 		// $('.mainPageSideInner').addClass('innerMoveBack');

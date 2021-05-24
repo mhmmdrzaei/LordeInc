@@ -2,7 +2,7 @@
   <div class="container">
 
 
-    <p>&copy; <?php echo date('Y'); ?></p>
+    <p>&copy; <?php bloginfo( 'name', 'display' ); ?> <?php echo date('Y'); ?></p>
   </div>
 </footer>
 

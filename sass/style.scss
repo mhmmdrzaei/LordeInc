@@ -49,14 +49,17 @@ Default Styling
 }
 main {
 	max-width: 1300px;
-	margin: 0 auto;
+	margin: 20px;
+	height: 94vh;
+	overflow: scroll;
 	// min-height: 95vh;
-	padding: 20px;
+	// padding: 20px;
 	
 	
 }
 .modelMain {
 	padding-right: 0;
+	height: 94vh;
 }
 // body.single-model {
 // 	footer {
@@ -370,9 +373,10 @@ button {
 //footer
 footer{
 	position: fixed;
-	bottom: 0;
-	right: 10px;
+	bottom: 4vh;
+	right: -2%;
 	// margin-right: 20px;
+	transform: rotate(90deg);
 	@include fontSize(6);
 }
 
@@ -418,8 +422,9 @@ footer{
 	border-right: 1px solid #dadbdd;
 	// min-height: 95vh;
 	.modelDetailsInner {
-		position: relative;
+		position: fixed;
 		height: 93vh;
+		width: 16%;
 
 	}
 	.modelHeader {
@@ -437,7 +442,7 @@ footer{
 		margin: 3px 0 7px;
 	}
 	.instagram {
-		margin-bottom: 70px;
+		margin-bottom: 9vh;
 		font-family: 'Akkurat-Normal', sans-serif;
 		font-weight: 700;
     	font-style: normal; 
@@ -474,7 +479,7 @@ footer{
 .bx-wrapper img {
     margin: 0 auto;
    	// max-width: 650px !important;
-    max-height: 80vh !important;
+    max-height: 78vh !important;
 }
 video {
   // display: block;
@@ -807,6 +812,8 @@ button.play {
 		width: 100%;
 		.modelDetailsInner {
 			height: auto;
+			position: relative;
+			width: 98%;
 		}
 		.modelName {
 			margin: 7px 0;
@@ -844,7 +851,7 @@ button.play {
 
 }
 .modelMain {
-	padding-right: 20px;
+	// padding-right: 20px;
 }
 
 }
@@ -920,6 +927,19 @@ body {
 	}
 
 }
+footer{
+	right: -7%;
+	bottom: 5vh;
+	// margin-right: 20px;
+}
+.displaynone {
+	display: none;
+}
+body.single-model {
+	footer {
+		right: -8%;
+	}
+}
 .mainPagePosts{
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
@@ -929,6 +949,7 @@ body {
 	display: block;
 	position: fixed;
 	z-index: 100;
+	width: 100%;
 	h1 {
 		text-transform: uppercase;
 		margin: 0;
