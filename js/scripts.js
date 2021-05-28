@@ -103,58 +103,41 @@ $(function(){
 
 	//        });
 	//    });
-	setTimeout(function() {
-	var $grid = $('.grid').masonry({
-	  itemSelector: 'none', // select none at first
-	  columnWidth: '.grid-sizer',
-	  // gutter: '.grid__gutter-sizer',
-	  percentPosition: true,
-	  stagger: 800,
-	  // nicer reveal transition
-	  visibleStyle: { transform: 'translateY(0)', opacity: 1 },
-	  hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
-	});
-	$grid.addClass('is-visible-items');
-	  $grid.masonry( 'option', {
-	    itemSelector: '.grid-item'
-	  });
-	  // var $items = $grid.find('.grid-item');
-	  // $grid.masonry( 'appended', $items );
-
-	// get Masonry instance
-	var msnry = $grid.data('masonry');
-
-	// initial items reveal
-	$grid.imagesLoaded( function() {
-	  $grid.removeClass('are-images-unloaded');
-	  $grid.masonry( 'option', { itemSelector: '.grid-item' });
-	  var $items = $grid.find('.grid-item');
-	  $grid.masonry( 'appended', $items );
-	});
-	}, 2000);
 
 
-	// setTimeout(function() {
+	// var waitForEl = function(selector, callback) {
+	//   if (jQuery(selector).length) {
+	//     callback();
+	//   } else {
+	//     setTimeout(function() {
+	//       waitForEl(selector, callback);
+	//     }, 100);
+	//   }
+	// };
+
+	// waitForEl(selector, function() {
+	//   // work the magic
+
+	//   setTimeout(function() {
 	//   var $grid = $('.grid').masonry({
-	//     // hack, select no items
-	//     itemSelector: 'none',
+	//     itemSelector: 'none', // select none at first
 	//     columnWidth: '.grid-sizer',
+	//     // gutter: '.grid__gutter-sizer',
 	//     percentPosition: true,
 	//     stagger: 800,
-	//     // gutter: 10,
-	//    visibleStyle: { transform: 'translateY(0)', opacity: 1 },
-	//   hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+	//     // nicer reveal transition
+	//     visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+	//     hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
 	//   });
 	//   $grid.addClass('is-visible-items');
-	//   // reset itemSelector
-	//   $grid.masonry( 'option', {
-	//     itemSelector: '.grid-item',
-	//   });
-	//   var $items = $grid.find('.grid-item');
-	//   $grid.masonry( 'appended', $items );
+	//     $grid.masonry( 'option', {
+	//       itemSelector: '.grid-item'
+	//     });
+	//     // var $items = $grid.find('.grid-item');
+	//     // $grid.masonry( 'appended', $items );
 
-	//   // // get Masonry instance
-	//   // var msnry = $grid.data('masonry');
+	//   // get Masonry instance
+	//   var msnry = $grid.data('masonry');
 
 	//   // initial items reveal
 	//   $grid.imagesLoaded( function() {
@@ -163,7 +146,66 @@ $(function(){
 	//     var $items = $grid.find('.grid-item');
 	//     $grid.masonry( 'appended', $items );
 	//   });
-	// }, 800);
+	//   }, 100);
+	// });
+
+
+
+	
+	  var $grid = $('.grid').masonry({
+	    // hack, select no items
+	    itemSelector: 'none',
+	    columnWidth: '.grid-sizer',
+	    percentPosition: true,
+	    stagger: 800,
+	    // gutter: 10,
+	   visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+	  hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+	  });
+	  
+	  // reset itemSelector
+	  $grid.masonry( 'option', {
+	    itemSelector: '.grid-item',
+	  });
+
+
+	  // initial items reveal
+
+	  $grid.imagesLoaded( function() {
+	  	$grid.addClass('is-visible-items');
+	
+	  	$grid.removeClass('are-images-unloaded');
+	  	// setTimeout(function() {	
+	  	
+	    $grid.masonry( 'option', { itemSelector: '.grid-item' });
+
+	     // }, 1500);
+	    // var $items = $grid.find('.grid-item');
+	    // $grid.masonry( 'appended', $items );
+	    var $items = $grid.find('.grid-item');
+	    $grid.masonry( 'appended', $items );
+	    
+
+	    // get Masonry instance
+	    var msnry = $grid.data('masonry');
+
+	  
+
+	  });
+
+
+
+	
+	 
+
+
+		
+
+
+
+	
+
+	
 
 	// $grid.infiniteScroll({
 	//   path: '.grid',

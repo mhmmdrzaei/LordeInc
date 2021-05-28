@@ -114,7 +114,7 @@
 
 			if( have_rows('casting_info') ):
 			    while( have_rows('casting_info') ) : the_row();?>
-			    	<div class=" grid-item grid-item--width<?php the_sub_field('image_width_casting'); ?>">
+			    	<div class=" grid-item are-images-unloaded grid-item--width<?php the_sub_field('image_width_casting'); ?>">
 			    		<img src="<?php the_sub_field('casting_image'); ?>" alt="<?php the_sub_field('image_title'); ?>">
 			    		<div class="castingNameOverlay" style="background-color: <?php the_field('background_color', 'option'); ?>"></div>
 			    		<div class="textCasting">
