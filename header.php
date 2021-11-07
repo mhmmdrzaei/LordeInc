@@ -16,7 +16,11 @@
   <!-- stylesheets should be enqueued in functions.php -->
   <?php wp_head(); ?>
 </head>
-
+<style>
+    ::-webkit-scrollbar {
+    background: <?php the_field('background_color', 'option'); ?>;
+    }
+</style>
 
 <body <?php body_class(); ?> style="background: <?php the_field('background_color', 'option'); ?>">
 

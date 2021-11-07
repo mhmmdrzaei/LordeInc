@@ -54,7 +54,7 @@
 	    <a href="https://www.instagram.com/lordeinc/" target="_blank">Instagram</a>
 	  </section>
 	  	<p class="moreinfoCasting">
-	  		commecial portfolio available upon request
+	  		commercial portfolio available upon request
 	  		<a href="mailto:<?php the_field('lorde_inc_email', 'option'); ?>"><?php the_field('lorde_inc_email', 'option'); ?></a>
 	  	</p>
 

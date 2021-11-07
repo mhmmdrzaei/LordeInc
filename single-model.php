@@ -119,26 +119,57 @@
       </div>
       <div class="measurements">
         <h4>Measurements</h4>
-        <p class="modelHeight">height: <?php the_field('model_heigh'); ?></p>
-        <p>
-          chest: <?php the_field('model_chest'); ?>
-        </p>
-        <p>
-          waist: <?php the_field('model_waist'); ?>
-        </p>
-        <p>
-          hips: <?php the_field('hips'); ?>
-        </p>
+          <?php 
+            $height = get_field('model_heigh');
+            if( $height ) {; ?>
+              <p class="modelHeight">height: <?php the_field('model_heigh'); ?></p>
+            <?php } ?> 
+
+          <?php 
+            $chest = get_field('model_chest');
+            if( $chest) {; ?>
+              <p>
+                chest: <?php the_field('model_chest'); ?>
+              </p>            
+            <?php } ?>  
+          <?php 
+            $waist = get_field('model_waist');
+            if( $waist ) {; ?>
+              <p>
+                waist: <?php the_field('model_waist'); ?>
+              </p>
+          <?php } ?>  
+          <?php 
+            $hips = get_field('hips');
+            if( $hips ) {; ?>
+              <p>
+                hips: <?php the_field('hips'); ?>
+              </p>
+          <?php } ?>  
         <br>
-        <p>
-          pants: <?php the_field('pants_size'); ?>
-        </p>
-        <p>
-          shirt: <?php the_field('shirt_size'); ?>
-        </p>
-        <p>
+        <?php 
+          $pants_size = get_field('pants_size');
+          if( $pants_size ) {; ?>
+            <p>
+              pants: <?php the_field('pants_size'); ?>
+            </p>
+        <?php } ?> 
+        <?php 
+          $shirt_size = get_field('shirt_size');
+          if( $shirt_size ) {; ?>
+            <p>
+              shirt: <?php the_field('shirt_size'); ?>
+            </p>
+        <?php } ?> 
+        <?php 
+          $shoe_size = get_field('shoe_size');
+          if( $shoe_size ) {; ?>
+          <p>
           shoes: <?php the_field('shoe_size'); ?>
-       </p>
+          </p>
+        <?php } ?> 
+
+
       </div>
       <div id="nav-below" class="navigation">
          <p class="nav-previous"><?php previous_post_link('%link', '&#8592; Previous'); ?></p>
