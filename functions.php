@@ -321,10 +321,12 @@ function pre_r($obj) {
 if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
+		'page_title' 	=> 'Agency Info',
+		'menu_title'	=> 'Agency Info',
 		'menu_slug' 	=> 'theme-general-settings',
 		'capability'	=> 'edit_posts',
+		'icon_url' => 'dashicons-email-alt2',
+		'position' => 4,
 		'redirect'		=> false
 	));
 	
