@@ -168,10 +168,12 @@ $(function(){
 	    itemSelector: '.grid-item',
 	  });
 
+	  var $firstThree = $('.grid-item:nth-child(-n+5)');
+
 
 	  // initial items reveal
 
-	  $grid.imagesLoaded( function() {
+	  $firstThree.imagesLoaded( function() {
 	  	$grid.addClass('is-visible-items');
 	
 	  	$grid.removeClass('are-images-unloaded');
