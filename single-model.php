@@ -49,7 +49,12 @@
       </section>
       <!-- <button class="morePress">Press</button> -->
       <!-- <a href="<?php the_field('journal_link','option') ?>" target="_blank">Journal</a> -->
-      <a href="https://www.instagram.com/lordeinc/" target="_blank">Instagram</a>
+        <?php if( have_rows('social_links', 'options') ): ;?>
+          <?php while( have_rows('social_links', 'options') ): the_row(); ?>
+            <a href="<?php the_sub_field('link_social_info'); ?>" target="_blank"><?php the_sub_field('link_label'); ?></a>
+            <?php endwhile; ?>
+           </section>
+        <?php endif; ?>
     </section>
     </section>
   </section>
@@ -103,7 +108,7 @@
         Model
       </h2>
       <p class="modelName"><?php the_title(); ?></p>
-            <div class="instagram">
+<!--             <div class="instagram">
         <?php if( have_rows('model_instagram') ): ?>
             <?php while( have_rows('model_instagram') ): the_row(); 
 
@@ -116,7 +121,7 @@
 
             <?php endwhile; ?>
         <?php endif; ?>
-      </div>
+      </div> -->
       <div class="measurements">
         <h4>Measurements</h4>
           <?php 

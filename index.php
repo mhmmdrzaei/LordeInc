@@ -51,7 +51,12 @@
 			</section>
 			<!-- <button class="morePress">Press</button> -->
 			<!-- // <a href="<?php the_field('journal_link','option') ?>" target="_blank">Journal</a> -->
-			<a href="https://www.instagram.com/lordeinc/" target="_blank">Instagram</a>
+			<?php if( have_rows('social_links', 'options') ): ;?>
+			  <?php while( have_rows('social_links', 'options') ): the_row(); ?>
+			    <a href="<?php the_sub_field('link_social_info'); ?>" target="_blank"><?php the_sub_field('link_label'); ?></a>
+			    <?php endwhile; ?>
+			   </section>
+			<?php endif; ?>
 		</section>
 		</section>
 	</section>

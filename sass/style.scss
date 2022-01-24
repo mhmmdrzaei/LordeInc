@@ -550,6 +550,27 @@ button.play {
 
 }
 //Casting 
+.loader {
+ border: 16px solid #c1c1c1;
+     border-radius: 50%;
+     border-top: 16px solid #464646;
+     width: 29px;
+     height: 30px;
+ 	margin: 20px auto;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+ }
+
+ /* Safari */
+ @-webkit-keyframes spin {
+   0% { -webkit-transform: rotate(0deg); }
+   100% { -webkit-transform: rotate(360deg); }
+ }
+
+ @keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+ }
 
 .pageCasting {
 	@extend .flex;
@@ -971,6 +992,7 @@ body.single-model {
 }
 .menuClick {
 	background: transparent;
+	color: black;
 	border: none;
 	padding: 0 0 0 1px;
 	text-transform: uppercase;
