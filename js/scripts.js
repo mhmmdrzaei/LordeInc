@@ -168,8 +168,8 @@ $(function(){
 	    itemSelector: '.grid-item',
 	  });
 
-	  var $firstThree = $('.grid-item:nth-child(-n+12)');
-	  var $firstTen = $('.grid-item:nth-child(n+12)');
+	  var $firstThree = $('.grid-item:nth-child(-n+8)');
+	  var $firstTen = $('.grid-item:nth-child(n+8)');
 
 
 	  // initial items reveal
@@ -178,11 +178,16 @@ $(function(){
 	  	$firstThree.addClass('is-visible-items');
 	
 	  	$firstThree.removeClass('are-images-unloaded');
-	  	// setTimeout(function() {	
+	  	
 	  	
 	    $grid.masonry( 'option', { itemSelector: '.grid-item' });
+	    setTimeout(function() {	
+	    	$firstTen.addClass('is-visible-items');
+	    	
+	    	$firstTen.removeClass('are-images-unloaded');
+	    	$('.loader').hide();
 
-	     // }, 1500);
+	     }, 1500);
 	    var $items = $grid.find('.grid-item');
 	    // $grid.masonry( 'appended', $items );
 	    var $items = $grid.find('.grid-item');
@@ -196,10 +201,7 @@ $(function(){
 
 	  });
 	  $firstTen.imagesLoaded( function() {
-	  	$firstTen.addClass('is-visible-items');
 	  
-	  	$firstTen.removeClass('are-images-unloaded');
-	  	$('.loader').hide();
 	  	// setTimeout(function() {	
 	  	
 	    // $grid.masonry( 'option', { itemSelector: '.grid-item' });
