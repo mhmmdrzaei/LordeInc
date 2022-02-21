@@ -48,7 +48,7 @@ Default Styling
 	flex-flow: row wrap;
 }
 main {
-	max-width: 1300px;
+	max-width: 1500px;
 	margin: 3vh 20px;
 	height: 94vh;
 	overflow: scroll;
@@ -607,13 +607,13 @@ button.play {
 }
 .grid-sizer,
 .grid-item {
-  width: 25%;
+  width: 49%;
 }
 .grid-item--width1 {
-	width: 25%;
+	width: 24%;
 }
 .grid-item--width2 {
-	width: 50%;
+	width: 49%;
 }
 .grid-item--width3 {
 	width: 75%;
@@ -1125,8 +1125,8 @@ body.single-model {
 
 @media(min-width: 1350px){ 
 .mission {
-	width: 20%;
-	left: 23.5%;
+	width: 290px;
+	left: 23vw;
 }
 .mainPagePosts {
 	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -1152,6 +1152,66 @@ body.single-model {
 
 
 }
+@media(min-width: 1450px){ 
+.mission {
+	width: 290px;
+	left: 23vw;
+}
+.mainPagePosts {
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+@keyframes midmoveOut {
+ from {left: 23.5%;}
+  to {left: -27%;}
+}
+
+@keyframes midmove {
+ from {left: -21%;}
+  to {left: 21.5%;}
+}
+@keyframes splash {
+ from {left: -25%;}
+  to {left: 21.5%;}
+}
+
+@keyframes splish {
+ from {left: 21.5%;}
+  to {left: -25%;}
+}
+
+
+}
+
+@media(min-width: 1550px){ 
+.mission {
+	width: 290px;
+	left: 29vw;
+}
+.mainPagePosts {
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+@keyframes midmoveOut {
+ from {left: 23.5%;}
+  to {left: -27%;}
+}
+
+@keyframes midmove {
+ from {left: -21%;}
+  to {left: 21.5%;}
+}
+@keyframes splash {
+ from {left: -25%;}
+  to {left: 21.5%;}
+}
+
+@keyframes splish {
+ from {left: 21.5%;}
+  to {left: -25%;}
+}
+
+
+}
+
 @media(max-width: 460px){
 button.play {
 	top:-6em;

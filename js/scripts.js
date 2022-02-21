@@ -150,76 +150,88 @@ $(function(){
 	// });
 
 
-
-	
-	  var $grid = $('.grid').masonry({
-	    // hack, select no items
-	    itemSelector: 'none',
-	    columnWidth: '.grid-sizer',
-	    percentPosition: true,
-	    stagger: 800,
-	    // gutter: 10,
-	   visibleStyle: { transform: 'translateY(0)', opacity: 1 },
-	  hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
-	  });
-	  
-	  // reset itemSelector
-	  $grid.masonry( 'option', {
+  var alm_masonry_vars = {
+      itemSelector : '.grid_item',
+      // columnWidth: '.grid-sizer',
+      percentPosition: true,
+      stagger: 800,
+      gutter: 10,
+      // visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+      // hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+   }
+   	  $grid.masonry( 'option', {
 	    itemSelector: '.grid-item',
 	  });
-
-	  var $firstThree = $('.grid-item:nth-child(-n+8)');
-	  var $firstTen = $('.grid-item:nth-child(n+8)');
-
-
-	  // initial items reveal
-
-	  $firstThree.imagesLoaded( function() {
-	  	$firstThree.addClass('is-visible-items');
 	
-	  	$firstThree.removeClass('are-images-unloaded');
+	  // var $grid = $('.inner-masorny').masonry({
+	  //   // hack, select no items
+	  //   itemSelector: 'none',
+	  //   columnWidth: '.grid-sizer',
+	  //   percentPosition: true,
+	  //   stagger: 800,
+	  //   // gutter: 10,
+	  //  visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+	  // hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+	  // });
+	  
+	  // // reset itemSelector
+	  // $grid.masonry( 'option', {
+	  //   itemSelector: '.grid-item',
+	  // });
+
+	  // var $firstThree = $('.grid-item:nth-child(-n+8)');
+	  // var $firstTen = $('.grid-item:nth-child(n+8)');
+
+
+	  // // initial items reveal
+
+	  // $firstThree.imagesLoaded( function() {
+	  // 	$firstThree.addClass('is-visible-items');
+	
+	  // 	$firstThree.removeClass('are-images-unloaded');
 	  	
 	  	
-	    $grid.masonry( 'option', { itemSelector: '.grid-item' });
-	    setTimeout(function() {	
-	    	$firstTen.addClass('is-visible-items');
+	  //   $grid.masonry( 'option', { itemSelector: '.grid-item' });
+	  //   setTimeout(function() {	
+	  //   	$firstTen.addClass('is-visible-items');
 	    	
-	    	$firstTen.removeClass('are-images-unloaded');
-	    	$('.loader').hide();
+	  //   	$firstTen.removeClass('are-images-unloaded');
+	  //   	$('.loader').hide();
 
-	     }, 1500);
-	    var $items = $grid.find('.grid-item');
-	    // $grid.masonry( 'appended', $items );
-	    var $items = $grid.find('.grid-item');
-	    $grid.masonry( 'appended', $items );
+	  //    }, 1500);
+	  //   var $items = $grid.find('.grid-item');
+	  //   // $grid.masonry( 'appended', $items );
+	  //   var $items = $grid.find('.grid-item');
+	  //   $grid.masonry( 'appended', $items );
 	    
 
-	    // get Masonry instance
-	    var msnry = $grid.data('masonry');
+	  //   // get Masonry instance
+	  //   var msnry = $grid.data('masonry');
 
 	  
 
-	  });
-	  $firstTen.imagesLoaded( function() {
+	  // });
+	  // $firstTen.imagesLoaded( function() {
 	  
-	  	// setTimeout(function() {	
+	  // 	// setTimeout(function() {	
 	  	
-	    // $grid.masonry( 'option', { itemSelector: '.grid-item' });
+	  //   // $grid.masonry( 'option', { itemSelector: '.grid-item' });
 
-	    //  // }, 1500);
-	    // var $items = $grid.find('.grid-item');
-	    // // $grid.masonry( 'appended', $items );
-	    // var $items = $grid.find('.grid-item');
-	    // $grid.masonry( 'appended', $items );
+	  //   //  // }, 1500);
+	  //   // var $items = $grid.find('.grid-item');
+	  //   // // $grid.masonry( 'appended', $items );
+	  //   // var $items = $grid.find('.grid-item');
+	  //   // $grid.masonry( 'appended', $items );
 	    
 
-	    // // get Masonry instance
-	    // var msnry = $grid.data('masonry');
+	  //   // // get Masonry instance
+	  //   // var msnry = $grid.data('masonry');
 
 	  
 
-	  });
+	  // });
 	
+
 
 
 
