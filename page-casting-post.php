@@ -111,8 +111,8 @@
 	</section>
 	<section class="castingPagePosts">
 	<div class="inner-masorny">
+		<?php echo do_shortcode('[ajax_load_more container_type="div" post_type="casting-post" posts_per_page="1" images_loaded="true" scroll_distance="50" transition="masonry" masonry_selector=".grid-item" masonry_animation="slide-up" masonry_horizontalorder="false"]'); ?>
 
-	<?php echo do_shortcode('[ajax_load_more container_type="div" post_type="casting-post" posts_per_page="1" transition="masonry" masonry_selector=".grid-item" images_loaded="true"]'); ?>
 
 	
 	</div>

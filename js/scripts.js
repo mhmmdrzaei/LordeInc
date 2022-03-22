@@ -180,16 +180,16 @@ $(function(){
 	    itemSelector: '.grid-item',
 	  });
 
-	  var $firstThree = $('.grid-item:nth-child(-n+8)');
+	  var $firstThree = $('.grid-item');
 	  var $firstTen = $('.grid-item:nth-child(n+8)');
 
 
 	  // initial items reveal
 
 	  $firstThree.imagesLoaded( function() {
-	  	$firstThree.addClass('is-visible-items');
+	  	// $firstThree.addClass('is-visible-items');
 	
-	  	$firstThree.removeClass('are-images-unloaded');
+	  	// $firstThree.removeClass('are-images-unloaded');
 	  	
 	  	
 	    $grid.masonry( 'option', { itemSelector: '.grid-item' });
@@ -212,25 +212,25 @@ $(function(){
 	  
 
 	  });
-	  $firstTen.imagesLoaded( function() {
+	  // $firstTen.imagesLoaded( function() {
 	  
-	  	// setTimeout(function() {	
+	  // 	// setTimeout(function() {	
 	  	
-	    // $grid.masonry( 'option', { itemSelector: '.grid-item' });
+	  //   // $grid.masonry( 'option', { itemSelector: '.grid-item' });
 
-	    //  // }, 1500);
-	    // var $items = $grid.find('.grid-item');
-	    // // $grid.masonry( 'appended', $items );
-	    // var $items = $grid.find('.grid-item');
-	    // $grid.masonry( 'appended', $items );
+	  //   //  // }, 1500);
+	  //   // var $items = $grid.find('.grid-item');
+	  //   // // $grid.masonry( 'appended', $items );
+	  //   // var $items = $grid.find('.grid-item');
+	  //   // $grid.masonry( 'appended', $items );
 	    
 
-	    // // get Masonry instance
-	    // var msnry = $grid.data('masonry');
+	  //   // // get Masonry instance
+	  //   // var msnry = $grid.data('masonry');
 
 	  
 
-	  });
+	  // });
 	
 
 

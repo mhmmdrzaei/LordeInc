@@ -144,7 +144,9 @@ button {
 	font-style: normal; 
 
 }
-
+.alm-masonry {
+	overflow: visible !important;
+}
 .submissionsInfo{
 	p {
 		margin: 0px 0;
@@ -609,7 +611,7 @@ button.play {
 .grid-item {
   height: auto;
   float: left;
-  padding: 0 3px;
+  padding: 10px;
 }
 .grid-sizer,
 .grid-item {
