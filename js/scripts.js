@@ -163,8 +163,13 @@ $(function(){
 	 //        });
 	 //    });
 
-	
-	  var $grid = $('.inner-masorny').masonry({
+	$('.alm-listing').isotope({
+	  itemSelector: '.grid-item',
+	  masonry: {
+	    columnWidth: 100
+	  }
+	});
+	  var $grid = $('.grid').masonry({
 	    // hack, select no items
 	    itemSelector: 'none',
 	    columnWidth: '.grid-sizer',
@@ -194,9 +199,9 @@ $(function(){
 	  	
 	    $grid.masonry( 'option', { itemSelector: '.grid-item' });
 	    setTimeout(function() {	
-	    	$firstTen.addClass('is-visible-items');
+	    	$firstThree.addClass('is-visible-items');
 	    	
-	    	$firstTen.removeClass('are-images-unloaded');
+	    	$firstThree.removeClass('are-images-unloaded');
 	    	$('.loader').hide();
 
 	     }, 1500);

@@ -77,6 +77,14 @@ function hackeryou_scripts() {
     	null, //version number
     	true //load in footer
     );
+wp_deregister_script('isotope');
+    wp_enqueue_script(
+    	'isotope',
+    	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js",
+    	false, //dependencies
+    	null, //version number
+    	true //load in footer
+    );
 
   	wp_deregister_script('masonryjs');
     wp_enqueue_script(
