@@ -744,6 +744,146 @@ button.play {
 	// height: 95vh;
 	border-right: 1px solid #dadbdd;
 }
+
+//commercial casting
+.commericalSide {
+	width: 100%;
+	a {
+		display: block;
+		@include fontSize(8);
+		line-height: 1.6;
+		margin-bottom: 10px;
+	}
+
+	h1 {
+		margin: 0;
+		@include fontSize(9);
+		// padding: 20px;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		// position: fixed;
+		a {
+				@include fontSize(9);
+			&:hover {
+				text-decoration: none;
+
+			}
+		}
+	}
+	h2 {
+		@include fontSize(8);
+		font-weight: 300;
+			font-family: 'Akkurat-Leicht', sans-serif;
+			margin-bottom: 30px;
+
+	}
+	.commercialItems {
+		width: 100%;
+	}
+	.commercialItemEach {
+		@extend .flex;
+		position: relative;
+		width: 100%;
+		a {
+			width: 30%;
+		}
+		figure {
+			width: 70%;
+			max-width: 700px;
+
+		}
+		.hide {
+		  display: none;
+		  position: fixed;
+		  
+
+
+		}
+		@keyframes opacityOn {
+		    0% {
+		        opacity: 0;
+		    }
+		    100% {
+		        opacity: 1;
+		    }
+		}
+		    
+		a:hover + .hide {
+		  display: block;
+		  // color: red;
+		  left: 25%;
+		  top:150px;
+		  animation: opacityOn 1s normal forwards;
+		  
+		 
+		}
+		
+
+	}
+
+}
+.commercialMenu {
+	@include fontSize(9);
+	h1 {
+		margin: 0;
+		@include fontSize(9);
+		// padding: 20px;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		// position: fixed;
+		a {
+				@include fontSize(9);
+			&:hover {
+				text-decoration: none;
+
+			}
+		}
+	}
+}
+.castingPageContent {
+	@include fontSize(9);
+	@extend .flex;
+	margin-top: 30px;
+	justify-content: space-between;
+	.castingPageInfo {
+		width: 28%;
+		margin-bottom: 20px;
+
+	}
+	.fullWidthHorizontal {
+		width: 70%;
+		margin-bottom: 20px;
+		margin: 0 auto 20px;
+	}
+	.halfWidthcasting {
+		width: 48%;
+		margin-bottom: 10px;
+		margin: 0 auto 20px;
+
+	}
+	.embeddedVideo {
+		width: 70%;
+		margin: 0 auto 20px;
+	}
+	.videoFile {
+		width: 70%;
+		margin: 0 auto 20px;
+	}
+}
+
+.videoContainer {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.videoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 //media Queries 
 @media(max-width: 970px){ 
 
@@ -945,6 +1085,16 @@ button.play {
 }
 
 @media(max-width: 640px){ 
+	.commericalSide .commercialItemEach {
+		a:hover + .hide {
+			display: none;
+		}
+	 }
+.castingPageContent {
+	.castingPageInfo,.embeddedVideo,.videoFile,.fullWidthHorizontal,.halfWidthcasting {
+		width: 100%;
+	}
+}
 h1, h2 {
 	@include fontSize(12);
 }
@@ -1247,8 +1397,9 @@ body.single-model {
 @media(max-width: 460px){
 button.play {
 	top:-6em;
-}	
- }
+}
+
+}
 
 
 
