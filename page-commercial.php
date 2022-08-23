@@ -8,7 +8,7 @@
 	        <?php bloginfo( 'name' ); ?>
 	      </a>
 	    </h1>
-	    <h2><?php the_title(); ?></h2>
+	    <h2 class="gs_reveal"><?php the_title(); ?></h2>
 
 		<section class="commercialItems">
 			<?php $args = array( 
@@ -19,8 +19,8 @@
 			  query_posts( $args ); // hijack the main loop
 			  while ( have_posts() ) : the_post();
 			    ?>
-			    <section class="commercialItemEach">
-			    	<a href="<?php the_permalink(); ?>">
+			    <section class="commercialItemEach ">
+			    	<a href="<?php the_permalink(); ?>" class="gs_reveal gs_reveal_fromLeft">
 
 			    					<?php the_title(); ?>
 

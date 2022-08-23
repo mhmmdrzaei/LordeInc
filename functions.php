@@ -111,6 +111,21 @@ wp_deregister_script('isotope');
     	null, //version number
     	true //load in footer
     );
+    wp_enqueue_script(
+    	'scrollTrigger',
+    	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/gsap@3/dist/ScrollTrigger.min.js",
+    	false, //dependencies
+    	null, //version number
+    	true //load in footer
+    );
+
+    wp_enqueue_script(
+    	'gsap',
+    	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.co/gsap@3/dist/gsap.min.js",
+    	false, //dependencies
+    	null, //version number
+    	true //load in footer
+    );
 
   wp_enqueue_script(
     'plugins', //handle

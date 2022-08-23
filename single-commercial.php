@@ -12,7 +12,7 @@
   <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
   <section class="castingPageContent">
 
-    <section class="castingPageInfo">
+    <section class="castingPageInfo gs_reveal gs_reveal_fromLeft">
       <h2 class="entry-title"><?php the_title(); ?></h2>
       <?php the_field('casting_description'); ?>
     </section>
@@ -33,7 +33,7 @@
 
         if( !empty( $videoFile ) ): ?>
           <section class="videoFile">
-            <section class="videoContainer"   aria-label="Embedded content container">
+            <section class="videoContainer gs_reveal gs_reveal_fromRight"   aria-label="Embedded content container">
                <video class="vid" muted controls controlsList="nodownload nofullscreen noremoteplayback">
                  <source src="<?php the_field('short_video'); ?>" type="video/mp4">
                  Your browser does not support the video tag.
@@ -56,12 +56,12 @@
                         $alt = $horizontalimage['alt']; ?>
                         <?php 
                             if( get_sub_field('image_width') == 'Full Width' ): ?>
-                        <figure class="fullWidthHorizontal">
+                        <figure class="fullWidthHorizontal gs_reveal gs_reveal_fromRight">
                           <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
                         </figure>
 
                     <?php elseif ( get_sub_field('image_width') == 'Half Width' ): ; ?>
-                      <figure class="halfWidthcasting">
+                      <figure class="halfWidthcasting gs_reveal">
                         <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
                       </figure>
                      <?php endif; ?>

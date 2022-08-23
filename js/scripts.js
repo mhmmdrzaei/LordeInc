@@ -325,8 +325,78 @@ $(function(){
 		console.log('fart');
 	  // Handler for .load() called.
 	});
+
+
+	
+
 	
 
 });
+// gsap
 
+function animateFrom(elem, direction) {
+	  gsap.registerPlugin(ScrollTrigger);
+  direction = direction || 1;
+  var x = 0,
+      y = direction * 100;
+  if(elem.classList.contains("gs_reveal_fromLeft")) {
+    x = -200;
+    y = 0;
+  } else if (elem.classList.contains("gs_reveal_fromRight")) {
+    x = 200;
+    y = 0;
+
+  } 
+  // else if (elem.classList.contains("gs_reveal_fromBottom")) {
+  //   // x = 0;
+  //   // y = 200;
+
+  // }
+  // gsap.set(".gs_reveal_fromBottom", { yPercent: 0});
+
+  // gsap.to(".gs_reveal_fromBottom", {
+  //   // yPercent: -25,
+  //   ease: "none",
+  //    y: 0, 
+  //    opacity: 1,
+  //   scrollTrigger: {
+  //     trigger: ".artistLink",
+  //     start: "top center",
+  //     end: "top 50px",
+  //     // pin: true,
+  //     scrub: 3
+  //   }, 
+  // });
+  elem.style.transform = "translate(" + x + "px, " + y + "px)";
+  elem.style.opacity = "1";
+  gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+    duration: 2.25, 
+    x: 0,
+    y: 0, 
+    autoAlpha: 1, 
+    // ease: "expo", 
+    overwrite: "auto",
+    ease: "power2",
+    stagger: 0.3
+  });
+}
+
+function hide(elem) {
+  gsap.set(elem, {autoAlpha: 1});
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  gsap.registerPlugin(ScrollTrigger);
+  
+  gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
+    hide(elem); // assure that the element is hidden when scrolled into view
+    
+    ScrollTrigger.create({
+      trigger: elem,
+      onEnter: function() { animateFrom(elem) }, 
+      onEnterBack: function() { animateFrom(elem, -1) },
+      onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+    });
+  });
+});
 
