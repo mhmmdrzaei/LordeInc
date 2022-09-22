@@ -496,7 +496,11 @@ video {
   min-height: 250px;
   width: 100%;
   outline: none;
+  max-height: 480px !important;
 
+}
+.vid {
+	max-height: 380px !important;
 }
 button.play {
 	height: 0px;

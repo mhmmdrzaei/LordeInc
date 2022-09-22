@@ -49,7 +49,7 @@
 
 
 	    </section>
-	    <!-- <button class="morePress">Press</button> -->
+	    <button class="morePress">Press</button>
 	    <!-- <a href="<?php the_field('journal_link','option') ?>" target="_blank">Journal</a> -->
 	    <?php if( have_rows('social_links', 'options') ): ;?>
 	      <?php while( have_rows('social_links', 'options') ): the_row(); ?>

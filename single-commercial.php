@@ -33,7 +33,7 @@
 
         if( !empty( $videoFile ) ): ?>
           <section class="videoFile">
-            <section class="videoContainer gs_reveal gs_reveal_fromRight"   aria-label="Embedded content container">
+            <section class="videoContainerNew"   aria-label="Embedded content container">
                <video class="vid" muted controls controlsList="nodownload nofullscreen noremoteplayback">
                  <source src="<?php the_field('short_video'); ?>" type="video/mp4">
                  Your browser does not support the video tag.
