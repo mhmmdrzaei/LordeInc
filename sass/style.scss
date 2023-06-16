@@ -276,7 +276,7 @@ button {
 	width: 20.5%;
 	left: 21%;
 	// padding: 0 20px;
-	height: calc(100vh-40px);
+	height: calc(100vh - 40px);
 
 	h2 {
 		margin: 0 0 45px;
@@ -563,27 +563,38 @@ button.play {
 }
 //Casting 
 .loader {
- border: 16px solid #c1c1c1;
-     border-radius: 50%;
-     border-top: 16px solid #464646;
-     width: 29px;
-     height: 30px;
- 	margin: 20px auto;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
- }
-
- /* Safari */
- @-webkit-keyframes spin {
-   0% { -webkit-transform: rotate(0deg); }
-   100% { -webkit-transform: rotate(360deg); }
- }
-
- @keyframes spin {
-   0% { transform: rotate(0deg); }
-   100% { transform: rotate(360deg); }
- }
-
+	color: #002e6e;
+	width: 3px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	box-shadow: 19px 0 0 7px, 38px 0 0 3px, 57px 0 0 0;
+	position: absolute;
+	top: 50%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+	animation: loader 0.5s infinite alternate linear;
+	-webkit-box-shadow: 19px 0 0 7px, 38px 0 0 3px, 57px 0 0 0;
+	-webkit-transform: translateX(-38px);
+	-webkit-animation: loader 0.5s infinite alternate linear;
+  }
+  
+  @keyframes loader {
+	50% {
+	  box-shadow: 19px 0 0 3px, 38px 0 0 7px, 57px 0 0 3px;
+	}
+	100% {
+	  box-shadow: 19px 0 0 0, 38px 0 0 3px, 57px 0 0 7px;
+	}
+  }
+  
+  @-webkit-keyframes loader {
+	50% {
+	  box-shadow: 19px 0 0 3px, 38px 0 0 7px, 57px 0 0 3px;
+	}
+	100% {
+	  box-shadow: 19px 0 0 0, 38px 0 0 3px, 57px 0 0 7px;
+	}
+  }
 .pageCasting {
 	@extend .flex;
 	justify-content: space-between;

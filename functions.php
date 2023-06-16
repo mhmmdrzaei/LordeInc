@@ -69,7 +69,6 @@ function hackeryou_scripts() {
   	true //load in footer
   );
 
-  	wp_deregister_script('imagesloaded');
     wp_enqueue_script(
     	'imagesloaded',
     	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js",
@@ -77,7 +76,6 @@ function hackeryou_scripts() {
     	null, //version number
     	true //load in footer
     );
-wp_deregister_script('isotope');
     wp_enqueue_script(
     	'isotope',
     	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js",
@@ -86,7 +84,7 @@ wp_deregister_script('isotope');
     	true //load in footer
     );
 
-  	wp_deregister_script('masonryjs');
+
     wp_enqueue_script(
     	'masonaryjs',
     	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js",
@@ -94,15 +92,14 @@ wp_deregister_script('isotope');
     	null, //version number
     	true //load in footer
     );
-    wp_deregister_script('infinitescroll');
-    wp_enqueue_script(
-      	'infinitescroll',
-      	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js
-",
-      	false, //dependencies
-      	null, //version number
-      	true //load in footer
-     );
+//     wp_enqueue_script(
+//       	'infinitescroll',
+//       	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js
+// ",
+//       	false, //dependencies
+//       	null, //version number
+//       	true //load in footer
+//      );
   	wp_deregister_script('bxsliderjs');
     wp_enqueue_script(
     	'bxslidejs',
@@ -118,7 +115,13 @@ wp_deregister_script('isotope');
     	null, //version number
     	true //load in footer
     );
-
+	wp_enqueue_script(
+    	'lazyload',
+    	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js",
+    	false, //dependencies
+    	null, //version number
+    	true //load in footer
+    );
     wp_enqueue_script(
     	'gsap',
     	"https" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://unpkg.co/gsap@3/dist/gsap.min.js",
